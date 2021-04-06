@@ -1,11 +1,8 @@
-#JOINT PROJECT
-#Bookiernes
-
-***
+#JOINT PROJECT - Bookiernes
 
 ## Introduction
 This project is about developing a software for our
-company Bookiernes S.A.. This company has decided to 
+company "Bookiernes S.A". This company has decided to 
 hire us because its sales had dropped exponentially 
 due to the scarce relationship between the members 
 of the company and their lack of communication. 
@@ -15,9 +12,9 @@ try to change it.
 
 The company has decided to hire us because we 
 work computerizing workflows and trying to avoid 
-economic losses with a best structured idea and
-workspace. Besides of this, we need to centralize 
-the workflow and the communication between all the 
+economic losses with the best structured idea and
+workspace. Also, we need to centralize 
+the workflow, and the communication between all the 
 members of this company. 
 
 ## Prerequisites
@@ -26,13 +23,13 @@ needed to run the Django project:
 ```
 pip install -r requirements.txt
 ```
-Also you will need to apply the migrations 
+Also, you will need to apply the migrations 
 from the Django models by using:
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-And finally you will be able to start the 
+Finally, you will be able to start the 
 project locally using:
 ```
 python manage.py runserver
