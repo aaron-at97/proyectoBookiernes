@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
-# Create your models here.
 
 
 class Book(models.Model):
@@ -33,8 +32,9 @@ class Book(models.Model):
     def __unicode__(self):
         return u"%s" % self.title
 
+
 class Notification(models.Model):
-    book_key = models.ForeignKey(Book, related_name='About', on_delete=models.CASCADE)
+    book_key = models.ForeignKey(Book, on_delete=models.CASCADE)
     concept = models.TextField(blank=False, null=False, max_length=100)
     seen = models.BooleanField(default=False)
     date = models.DateField(default=date.today)
@@ -52,7 +52,7 @@ class Staff(models.Model):
     #foreing key amb els implicats
 
     ROLES = (
-        ('Writer', 'Writer')
+        ('Writer', 'Writer'),
         ('Editor', 'Editor'),
         ('Editor in chief', 'Editor in chief'),
         ('Chief designer', 'Chief designer'),
