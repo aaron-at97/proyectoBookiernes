@@ -1,5 +1,4 @@
-
-#JOINT PROJECT - Bookiernes
+# JOINT PROJECT - Bookiernes
 
 ## Introduction
 This project is about developing a software for our
