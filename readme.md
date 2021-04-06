@@ -21,3 +21,19 @@ the workflow and the communication between all the
 members of this company. 
 
 ## Prerequisites
+In order to install all the dependencies 
+needed to run the Django project:
+```
+pip install -r requirements.txt
+```
+Also you will need to apply the migrations 
+from the Django models by using:
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+And finally you will be able to start the 
+project locally using:
+```
+python manage.py runserver
+```
