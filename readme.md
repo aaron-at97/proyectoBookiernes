@@ -1,5 +1,7 @@
 #JOINT PROJECT - Bookiernes
+
 ***
+
 ## Introduction
 This project is about developing a software for our
 company Bookiernes S.A.. This company has decided to 
