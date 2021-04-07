@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
@@ -11,6 +10,7 @@ class Book(models.Model):
     deleted = models.BooleanField(default=False, null=False, blank=False)
 
     STATUS = (
+        (0, 'Presented'),
         (1, 'Revision'),
         (2, 'Accepted'),
         (3, 'Denied'),
@@ -24,7 +24,7 @@ class Book(models.Model):
         (11, 'Published'),
     )
 
-    state = models.PositiveIntegerField(default=1, choices=STATUS)
+    state = models.PositiveIntegerField(default=0, choices=STATUS)
 
     def __str__(self):
         return u"%s" % self.title
@@ -49,7 +49,7 @@ class Notification(models.Model):
 class Staff(models.Model):
     staff_id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    #foreing key amb els implicats
+    name = models.CharField(blank=False, null=False, max_length=20)
 
     ROLES = (
         ('Writer', 'Writer'),
@@ -61,7 +61,6 @@ class Staff(models.Model):
         ('Developer', 'Developer'),
     )
 
-    name = models.CharField(blank=False, null=False, max_length=20)
     role = models.CharField('Role', blank=False, null=False, choices=ROLES, max_length=25)
     notification = models.ManyToManyField(Notification, blank=True)
 
@@ -69,14 +68,66 @@ class Staff(models.Model):
         abstract = True
 
 
+class Writer(Staff):
+    writer = models.ManyToManyField(Book, blank=True)
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
 
 
+class Editor(Staff):
+    assigned = models.ManyToManyField(Book, blank=True)
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
 
 
+class EditorChief(Staff):
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
 
 
+class ChiefDesigner(Staff):
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
 
 
+class Designer(Staff):
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
 
 
+class CTO(Staff):
 
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+
+class Developer(Staff):
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
