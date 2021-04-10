@@ -1,0 +1,14 @@
+{% extends "users/staff_base.html" %}
+{% load static %}
+{% block content %}
+<h1>
+    Llibres
+</h1>
+<ul>
+    {% for book in BooksList %}
+        {% include "books/book.html" %}
+    {% empty %}
+        <li>Sorry, no books registered yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} Bookiernes Staff {% endblock title %}
+    </title>
+
+    <!-- Linking the stylesheets -->
+    {% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    {% block navbar %}
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark" style="background-color: #76b852">
+        {% if role == 'Designer' %}
+        <a class="navbar-brand" href="/staff/list_books">
+            <img src="{% static '' %}" width="30" height="30" class="d-inline-block align-top"> ElJuernes
+        </a>
+        {% endif %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            {% if role == 'Editor in chief' %}
+                {% include "navbars/cheif_editor_navbar.html"%
+            {% else %}
+                {% comment %} TODO {% endcomment %}
+            {% endif %}
+
+            {% include "notifications/notifications.html"%
+            <span class="navbar-text">
+                <i class="fa fa-user"></i> User: {{ user.username }}
+                <a id="logout_btn" href="" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout
+                    <i class="fa fa-sign-out-alt "></i>
+                </a>
+            </span>
+        </div>
+    </nav>
+    {% endblock navbar %}
+    {% block contentwocontainer %} {% endblock contentwocontainer %}
+    <div id="content" class="container" style="padding-top: 100px; padding-bottom: 100px">
+        {% block content %} {% endblock content %}
+    </div>
+    {% block footer %}
+    <div id="footer" class="footer bg-dark">
+        <div class="container text-white">
+            <span>Bookiernes Project</span>
+        </div>
+    </div>
+    {% endblock footer %}
+</body>
+</html>

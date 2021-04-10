@@ -1,3 +1,31 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
+from django.utils.decorators import method_decorator
 
-# Create your views here.
+from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer
+
+
+class LoginRequiredMixinStaff(object):
+    @method_decorator(login_required(login_url='/staff/login'))
+    def dispatch(self, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(*args, **kwargs)
+
+
+def get_member(user):
+    if Writer.objects.filter(user=user).exists():
+        return Writer.objects.get(user=user)
+    if Editor.objects.filter(user=user).exists():
+        return Editor.objects.get(user=user)
+    elif EditorChief.objects.filter(user=user).exists():
+        return EditorChief.objects.get(user=user)
+    elif ChiefDesigner.objects.filter(user=user).exists():
+        return ChiefDesigner.objects.get(user=user)
+    elif Designer.objects.filter(user=user).exists():
+        return Designer.objects.get(user=user)
+    elif CTO.objects.filter(user=user).exists():
+        return CTO.objects.get(user=user)
+    elif Developer.objects.filter(user=user).exists():
+        return Developer.objects.get(user=user)
+
+    return None
