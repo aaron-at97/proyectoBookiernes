@@ -1,4 +1,5 @@
-{% extends "users/staff_base.html" %}
+<!--tine que extender de staff_base -->
+
 {% load static %}
 {% block content %}
 <h1>
@@ -6,6 +7,7 @@
 </h1>
 <ul>
     {% for book in BooksList %}
+         <li>{{ book.name }}</li>
         {% include "books/book.html" %}
     {% empty %}
         <li>Sorry, no books registered yet.</li>
