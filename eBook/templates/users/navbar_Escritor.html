@@ -53,13 +53,12 @@
 
                   <ul class="nav-inverse nav-tabs nav-stacked">
                     <li id="submenu-item-account-overview" class="active" >
-                      <a href=""><i class="fa fa-book" aria-hidden="true"></i> Mis Libros Subidos </a>
+                      <a href="{% url 'list_book' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis Libros Subidos </a>
                     </li>
 
                     <li id="submenu-item-family-plan">
-                      <a href="p"><i class="fa fa-upload" aria-hidden="true"></i> Subir Libros </a>
+                      <a href="{% url 'book_create' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir Libros </a>
                     </li>
-
 
                     <li id="salir">
                       <a href=""><i class="fa fa-undo" aria-hidden="true"></i> Salir </a>
@@ -77,15 +76,10 @@
 
 			 <div class="container-fluid">
 				<div class="album-results">
-				  <div class="row" id="poner">
-                      <!-- ----------------------------------------- -->
-                                    <!-- Insertarn codigo -->
-                      <!-- ----------------------------------------- -->
                      <div class="row" id="poner">
                          {% block content %}
                          {% endblock %}
-				    </div>
-				  </div>
+                    </div>
 				</div>
 			 </div>
         </div>

@@ -2,18 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
+from django.forms import ModelForm
+
 
 class Book(models.Model):
-    id_book = models.CharField(blank=False, null=False, max_length=64)
     title = models.CharField(blank=False, null=False, max_length=64)
     body = models.TextField(blank=False)
     deleted = models.BooleanField(default=False, null=False, blank=False)
 
     STATUS = (
         (0, 'Presented'),
-        (1, 'Revision'),
-        (2, 'Accepted'),
-        (3, 'Denied'),
+        (1, 'Accepted'),
+        (2, 'Denied'),
+        (3, 'Revision'),
         (4, 'Pending images'),
         (5, 'Images accepted'),
         (6, 'Images denied'),
@@ -93,6 +94,7 @@ class Editor(Staff):
     def get_homepage(self):
         return "/staff/list_books"
 
+
 class EditorChief(Staff):
 
     def __str__(self):
@@ -115,6 +117,7 @@ class ChiefDesigner(Staff):
 
     def get_homepage(self):
         return "/staff/list_books"
+
 
 class Designer(Staff):
 
@@ -141,3 +144,4 @@ class Developer(Staff):
 
     def __unicode__(self):
         return u"%s" % self.name
+

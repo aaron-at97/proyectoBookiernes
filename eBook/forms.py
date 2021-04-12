@@ -5,6 +5,8 @@ from django.forms import (
 )
 from django import forms
 
+from eBook.models import Book
+
 
 class LoginForm(AuthenticationForm):
 
@@ -29,3 +31,9 @@ class LoginForm(AuthenticationForm):
         'username',
         'password',
     ]
+
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+    exclude = ['deleted']
