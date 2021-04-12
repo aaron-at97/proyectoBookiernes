@@ -15,8 +15,11 @@ class BooksList(ListView, LoginRequiredMixinStaff):
         member = get_member(self.request.user)
         if member.role == "Editor in chief":
             books = Book.objects.filter(Q(state=0) | Q(state=1))
+        elif member.role == "Writer":
+            books = Book.objects.filter(Q(state=0))
         elif member.role == "Editor":
             books = Book.objects.filter(~Q(state=8) & Q(editor=member))
+
 
         context['msg'] = self.request.GET.get('msg', None)
         context['type'] = self.request.GET.get('type', None)
