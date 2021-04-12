@@ -77,7 +77,11 @@
                       <!-- ----------------------------------------- -->
                                     <!-- Insertarn codigo -->
                       <!-- ----------------------------------------- -->
-                      	{%  include 'footer.html' %}
+                     <div class="row" id="poner">
+                         {% block poner %}
+                            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                         {% endblock %}
+				    </div>
 				  </div>
 				</div>
 			 </div>
