@@ -2,12 +2,16 @@
 {% load static %}
 {% block content %}
 
-  <form method="post" enctype="multipart/form-data" action="">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Submit"/>
-    </form>
-
+<div class="formulario-registro">
+      <div class="container">
+            <div class="contenido-formulario">
+              <h2 style="color: white"> Regístrar Libro </h2>
+              <form id="formulari" method="post" enctype="multipart/form-data" action="">
+                    {% csrf_token %}
+                        {{ form.as_ul }}
+                    <input class="btn btn-stroked-dark" type="submit" value="Enviar"/>
+              </form>
+            </div>
+      </div>
+</div>
 {% endblock %}
