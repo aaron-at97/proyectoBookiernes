@@ -69,7 +69,7 @@ class Staff(models.Model):
 
 
 class Writer(Staff):
-    writer = models.ManyToManyField(Book, blank=True)
+    books = models.ManyToManyField(Book, blank=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -87,6 +87,8 @@ class Editor(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
+    def get_homepage(self):
+        return "/staff/list_books"
 
 class EditorChief(Staff):
 
