@@ -36,4 +36,4 @@ class LoginForm(AuthenticationForm):
 class BookForm(ModelForm):
     class Meta:
         model = Book
-    exclude = ['deleted']
+        fields = '__all__'
