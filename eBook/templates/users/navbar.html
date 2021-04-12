@@ -1,3 +1,9 @@
+{% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/css_InicioBookiernes.css' %}" />
+
+
      <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
     <symbol id="user-icon" viewBox="0 0 1024 1024">
@@ -19,11 +25,11 @@
                 <span class="icon-chevron-down"><i class="fa fa-book" aria-hidden="true"></i></span> Mis Libros Subidos
         </button>
           <ul class="dropdown-menu" role="menu">
-              <li id="submenu-item-account-overview" class="active" >
+              <li id="submenu-item-myBooks" class="active" >
                 <a href=""><i class="fa fa-book" aria-hidden="true"></i> Mis Libros Subidos </a>
               </li>
 
-              <li id="submenu-item-family-plan">
+              <li id="submenu-item-updateBook">
                   <a href=""><i class="fa fa-upload" aria-hidden="true"></i> Subir Libros </a>
               </li>
 
@@ -74,7 +80,10 @@
 			 <div class="container-fluid">
 				<div class="album-results">
 				  <div class="row" id="poner">
-                        {%  include 'footer.html' %}
+                      <!-- ----------------------------------------- -->
+                                    <!-- Insertarn codigo -->
+                      <!-- ----------------------------------------- -->
+                      	{%  include 'footer.html' %}
 				  </div>
 				</div>
 			 </div>
