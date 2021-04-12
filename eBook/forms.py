@@ -9,13 +9,17 @@ from django import forms
 class LoginForm(AuthenticationForm):
 
     username = forms.CharField(widget=TextInput(attrs={
-        'class':'form-control input-md',
-        'style': 'min-width: 0; width: 25%; display: inline;',
+        'class':'form-control input-md input-with-feedback',
+        'id': 'usuari',
+        'style': 'min-width: 0; width: 35%; margin: 2% 0; display: inline;',
+        'placeholder' : 'Usuario',
     }), required=True)
 
     password = forms.CharField(widget=PasswordInput(attrs={
         'class':'form-control input-md',
-        'style': 'min-width: 0; width: 25%; display: inline;',
+        'id': 'password',
+        'style': 'min-width: 0; width: 35%; margin: 2% 0; display: inline;',
+        'placeholder': 'Contraseña',
     }), required=True)
 
     class Meta:

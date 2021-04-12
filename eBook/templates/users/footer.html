@@ -1,40 +1,3 @@
-{% block cuerpo %}
-{% load static %}
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/login.css' %}" />
-<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
-
-<div align="center">
-    <div sp-header="" class="ng-scope">
-      <div class="head ">
-        <a class="bookiernes-logo" ng-href="/es-ES" tabindex="-1" title="bookiernes"  href="" value="bookiernes"></a>
-      </div>
-    </div>
-
-    <form action="{% url 'login' %}" method="post">{% csrf_token %}
-
-        <div class="row">
-            <div class="col-xs-12">
-
-        {{ form.username }}
-
-            </div>
-
-      </div>
-        <div class="row">
-            <div class="col-xs-12">
-        {{ form.password }}
-            </div>
-       </div>
-          <div class="row row-submit">
-            <button class="btn btn-stroked-dark" type="submit">Iniciar sesión</button>
-          </div>
-    </form>
-    <br />
-
-</div>
 
 
     <!-- Footeer -->
@@ -164,4 +127,3 @@
     </nav>
   </div>
 </footer>
-{% endblock %}
