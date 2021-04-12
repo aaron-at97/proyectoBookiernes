@@ -1,8 +1,3 @@
-{% load static %}
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/css_InicioBookiernes.css' %}" />
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
@@ -94,12 +89,17 @@
 
 			 <div class="container-fluid">
 				<div class="album-results">
-				  <div class="row" id="poner">
+
                       <!-- ----------------------------------------- -->
                                     <!-- Insertarn codigo -->
                       <!-- ----------------------------------------- -->
-                      	{%  include 'footer.html' %}
-				  </div>
+                     <div class="row" id="poner">
+                         {% block poner %}
+                            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                         {% endblock %}
+
+				    </div>
+
 				</div>
 			 </div>
         </div>
