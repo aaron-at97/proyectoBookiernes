@@ -23,9 +23,8 @@ class BooksList(ListView, LoginRequiredMixinStaff):
             return context
 
 
-def home_view(request):
+def BookCreate(request):
     context = {}
-
     form = BookForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():

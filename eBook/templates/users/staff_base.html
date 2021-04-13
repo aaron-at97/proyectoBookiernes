@@ -16,7 +16,11 @@
 
 
 <div id="sidebar">
-    {% include "users/navbar_Escritor.html" %}
+    {% if role == 'Writer' %}
+        {% include "navbars/navbar_Escritor.html" %}
+    {% elif role == 'Editor in chief' %}
+        {% include "navbars/navbar_Editor.html" %}
+    {% endif %}
 </div>
 
 <div id="footer">
