@@ -4,13 +4,17 @@
 {% load static %}
 {% block content %}
 <h1>
-    Libros:
+    Llibres
 </h1>
-
-<ul style= "color: white">
-    {% for element in object_list %}
-      <li style="color: white">{{ element.title }} </li>
+<ul>
+    {% for book in BooksList %}
+         <li>{{ book.name }}</li>
+        {% include "books/book.html" %}
+    {% empty %}
+        <li>Sorry, no books registered yet.</li>
     {% endfor %}
- </ul>
+</ul>
+
+    <input style="display: none" type="submit" id="valmenu" value="myBooks"/>
 
 {% endblock %}

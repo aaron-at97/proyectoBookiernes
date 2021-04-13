@@ -4,6 +4,24 @@
       crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/css_InicioBookiernes.css' %}"/>
 <link rel="stylesheet" href="{% static 'css/formStyle.css' %}"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'updateBook') {
+            $('.updateBook').addClass('active');
+        } else {
+            $('.myBooks').addClass('active');
+        }
+    });
+</script>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
@@ -57,12 +75,12 @@
                     </div>
 
                     <ul class="nav-inverse nav-tabs nav-stacked">
-                        <li id="submenu-item-account-overview" class="active">
+                        <li id="myBooks" class="myBooks">
                             <a href="{% url 'list_book' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis Libros
                                 Subidos </a>
                         </li>
 
-                        <li id="submenu-item-family-plan">
+                        <li id="updateBook" class="updateBook">
                             <a href="{% url 'book_create' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir
                                 Libros </a>
                         </li>
