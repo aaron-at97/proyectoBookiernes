@@ -39,10 +39,8 @@ class BookForm(ModelForm):
         fields = ['id_book',
                   'title',
                   'body',
-                  'state',
                   ]
 
     id_book = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Id libro',}),label='')
     title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Titulo',}),label='')
     body = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Descripcion',}),label='')
-    state = forms.ChoiceField(widget=forms.Select(attrs={'class':'select-css',}),choices=Book.STATUS,label='')

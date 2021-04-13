@@ -4,14 +4,13 @@
 {% load static %}
 {% block content %}
 <h1>
-    Llibres
+    Libros:
 </h1>
-<ul>
-    {% for book in BooksList %}
-         <li>{{ book.name }}</li>
-        {% include "books/book.html" %}
-    {% empty %}
-        <li>Sorry, no books registered yet.</li>
+
+<ul style= "color: white">
+    {% for element in object_list %}
+      <li style="color: white">{{ element.title }} </li>
     {% endfor %}
-</ul>
+ </ul>
+
 {% endblock %}
