@@ -14,6 +14,14 @@ class BooksList(ListView, LoginRequiredMixinStaff):
     model = Book
     template_name = 'books/staff_book_list.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(BooksList, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        if member.role == "Writer":
+            books = Book.objects.filter(state=0)
+            context['books'] = books
+            return context
+
 
 def home_view(request):
     context = {}
