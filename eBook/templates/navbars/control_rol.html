@@ -16,5 +16,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1> Hola {{ role }}</h1>
+    <h1> Bienvenido {{ role }}</h1>
+    <h3> Notificaciones {{ role }}</h3>
+    {% for element in book %}
+    <ul style="color: white">
+            <li style="color: white">Titulo: {{ element.title }} </li>
+            <li style="color: white">Cuerpo: {{ element.body }} </li>
+            <li style="color: white">Estado: {{ element.state }} </li>
+    </ul>
+    {% endfor %}
 {% endblock %}

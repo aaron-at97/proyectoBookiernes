@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
-from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer
+from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer, Book
 
 
 class LoginRequiredMixinStaff(object):
@@ -33,10 +33,11 @@ def get_member(user):
 
 
 class rolsStaff(TemplateView):
+    second_model = Book
     template_name = 'navbars/control_rol.html'
-
     def get_context_data(self, **kwargs):
         context = super(rolsStaff, self).get_context_data(**kwargs)
         member = get_member(self.request.user)
         context['role'] = member.role
+        context['book'] = Book.objects.filter(state=0)
         return context
