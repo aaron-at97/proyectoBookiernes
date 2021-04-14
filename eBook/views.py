@@ -33,7 +33,7 @@ def get_member(user):
 
 
 class rolsStaff(TemplateView):
-    template_name = 'navbars/navbar_base.html'
+    template_name = 'navbars/control_rol.html'
 
     def get_context_data(self, **kwargs):
         context = super(rolsStaff, self).get_context_data(**kwargs)

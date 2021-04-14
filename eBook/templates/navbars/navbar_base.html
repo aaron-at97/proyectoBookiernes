@@ -1,35 +1,6 @@
-{% load static %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      crossorigin="anonymous">
+{% extends 'users/staff_base.html' %}
 
-<link rel="stylesheet" href="{% static 'css/css_InicioBookiernes.css' %}"/>
-<link rel="stylesheet" href="{% static 'css/formStyle.css' %}"/>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript src="{% static 'js/menu.js' %}"-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function () {
-
-        var value = $("#valmenu").val();
-        // Checking for blank fields.
-        if (value == 'updateBook') {
-            $('.updateBook').addClass('active');
-        } else if (value == 'bookacept') {
-            $('.bookacept').addClass('active');
-        } else if (value == 'bookreject') {
-            $('.bookreject').addClass('active');
-        } else if (value == 'bookpublish') {
-            $('.bookpublish').addClass('active');
-        } else {
-            $('.myBooks').addClass('active');
-        }
-    });
-</script>
-
-
+{% block contents %}
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
     <symbol id="user-icon" viewBox="0 0 1024 1024">
@@ -54,8 +25,8 @@
                             Libros Subidos
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            {% block navbarXS %}
-                            {% endblock %}
+                             {% block navbarXS %}
+                             {% endblock %}
                         </ul>
                     </div>
 
@@ -73,14 +44,8 @@
                         </svg>
                     </div>
                     <ul class="nav-inverse nav-tabs nav-stacked">
-                        {% if role == 'Writer' %}
-                            {% include "navbars/navbar_Escritor.html" %}
-                        {% elif role == 'Editor in chief' %}
-                            {% include "navbars/navbar_Editor.html" %}
-                        {% else %}
-                            {% block navbar %}
-                            {% endblock %}
-                        {% endif %}
+                         {% block navbar %}
+                         {% endblock %}
                     </ul>
                 </div>
             </div>
@@ -105,3 +70,4 @@
         </div>
     </div>
 </div>
+{% endblock %}

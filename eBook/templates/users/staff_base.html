@@ -3,20 +3,20 @@
 <html lang="en">
 <head>
 
-
+    {% include "users/header.html" %}
     <title>{% block title %}Bookiernes{% endblock %}</title>
 </head>
 
 <body>
 <div id="header">
-    {% include "users/header.html" %}
+
 </div>
-<div id="sidebar">
-    {% include "navbars/navbar_base.html" %}
+<div id="content">
+    {% block contents %}{% endblock %}
 </div>
 
 <div id="footer">
-    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
 </div>
 
 </body>

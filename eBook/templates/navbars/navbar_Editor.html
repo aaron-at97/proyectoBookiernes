@@ -1,13 +1,30 @@
+<script>
+    $(document).ready(function () {
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'bookacept') {
+            $('.bookacept').addClass('active');
+        } else if (value == 'bookreject') {
+            $('.bookreject').addClass('active');
+        } else if (value == 'bookpublish') {
+            $('.bookpublish').addClass('active');
+        }
+    });
+</script>
+
 <li class="bookpublish" id="submenu-item-account-overview">
-    <a href="{% url 'book_publish' %}"><i class="fa fa-book" aria-hidden="true"></i> Asignar libros</a>
+    <a href="{% url 'book_publish' %}"><i class="fa fa-book" aria-hidden="true"></i> Asignar
+        libros</a>
 </li>
 
 <li class="bookreject" id="submenu-item-account-overview">
-    <a href="{% url 'book_rejected' %}"><i class="fa fa-remove" aria-hidden="true"></i> Libros Rechazados </a>
+    <a href="{% url 'book_rejected' %}"><i class="fa fa-remove" aria-hidden="true"></i> Libros
+        Rechazados </a>
 </li>
 
 <li class="bookacept" id="submenu-item-family-plan">
-    <a href="{% url 'book_acept' %}"><i class="fa fa-check" aria-hidden="true"></i> Libros aceptados </a>
+    <a href="{% url 'book_acept' %}"><i class="fa fa-check" aria-hidden="true"></i> Libros
+        aceptados </a>
 </li>
 
 <li id="listalibros">
@@ -17,4 +34,3 @@
 <li id="salir">
     <a href=""><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
 </li>
-

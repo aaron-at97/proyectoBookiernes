@@ -1,0 +1,20 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% if role == 'Writer' %}
+        {% include "navbars/navbar_Escritor.html" %}
+    {% elif role == 'Editor in chief' %}
+        {% include "navbars/navbar_Editor.html" %}
+    {% endif %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% if role == 'Writer' %}
+        {% include "navbars/navbar_Escritor.html" %}
+    {% elif role == 'Editor in chief' %}
+        {% include "navbars/navbar_Editor.html" %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1> Hola {{ role }}</h1>
+{% endblock %}

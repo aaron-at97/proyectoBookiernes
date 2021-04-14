@@ -1,14 +1,13 @@
 {% extends 'navbars/navbar_base.html' %}
-{% load static %}
+
 {% block navbar %}
-    {% include 'navbars/navbar_Editor.html' %}
+    {% include "navbars/navbar_Editor.html" %}
 {% endblock %}
-{% block navbarEd %}
-    {% include 'navbars/navbar_Editor.html' %}
-{% endblock %}
+
 {% block navbarXS %}
-    {% include 'navbars/navbar_Editor.html' %}
+    {% include "navbars/navbar_Editor.html" %}
 {% endblock %}
+
 {% block content %}
     <h1> Libros por asignar </h1>
     <table class="table">
@@ -50,12 +49,9 @@
             <td> 10/03/2021</td>
             <td> Por asignar</td>
             <td>
-                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"
-                        onclick="aceptarLibro(&quot;+camp.referencia+&quot;)"></button>
-                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"
-                        onclick="aceptarLibro(&quot;+camp.referencia+&quot;)"></button>
-                <button class="btn btn-primary fa fa-pencil" name="aceptar"
-                        onclick="aceptarLibro(&quot;+camp.referencia+&quot;)"></button>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+                <button class="btn btn-primary fa fa-pencil" name="aceptar"></button>
 
             </td>
         </tr>

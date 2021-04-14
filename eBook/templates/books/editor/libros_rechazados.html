@@ -1,20 +1,17 @@
 {% extends 'navbars/navbar_base.html' %}
-{% load static %}
 {% block navbar %}
-    {% include 'navbars/navbar_Editor.html' %}
+    {% include "navbars/navbar_Editor.html" %}
 {% endblock %}
-{% block navbarEd %}
-    {% include 'navbars/navbar_Editor.html' %}
-{% endblock %}
+
 {% block navbarXS %}
-    {% include 'navbars/navbar_Editor.html' %}
+    {% include "navbars/navbar_Editor.html" %}
 {% endblock %}
 {% block content %}
     <h1> Libros rechazados </h1>
     <table class="table">
         <tbody>
         <tr>
-            <td style="    font-weight: bold">Descargar libro</td>
+            <td style="font-weight: bold">Descargar libro</td>
             <td style="font-weight: bold"> Titulo libro</td>
             <td style="font-weight: bold"> Nombre autor</td>
             <td style="font-weight: bold">Genero</td>

@@ -1,11 +1,28 @@
+<script>
+    $(document).ready(function () {
+
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'updateBook') {
+            $('.updateBook').addClass('active');
+        } else if (value == 'myBooks') {
+            $('.myBooks').addClass('active');
+        }
+    });
+</script>
+
 <li id="myBooks" class="myBooks">
-    <a href="{% url 'list_book' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis Libros Subidos </a>
+    <a href="{% url 'list_book' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis Libros
+        Subidos </a>
 </li>
 
 <li id="updateBook" class="updateBook">
-    <a href="{% url 'book_create' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir Libros </a>
+    <a href="{% url 'book_create' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir
+        Libros </a>
 </li>
 
 <li id="salir">
     <a href=""><i class="fa fa-undo" aria-hidden="true"></i> Salir </a>
 </li>
+
+
