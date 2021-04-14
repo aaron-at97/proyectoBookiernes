@@ -69,6 +69,8 @@ class Staff(models.Model):
     class Meta:
         abstract = True
 
+    def get_homepage(self):
+        return "index/"
 
 class Writer(Staff):
     books = models.ManyToManyField(Book, blank=True)
@@ -79,9 +81,8 @@ class Writer(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
-    def get_homepage(self):
-        return "/staff/list_books"
-
+"""def get_homepage(self):
+        return "/staff/list_books"""
 
 class Editor(Staff):
     assigned = models.ManyToManyField(Book, blank=True)
@@ -92,9 +93,8 @@ class Editor(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
-    def get_homepage(self):
-        return "/staff/list_books"
-
+    """def get_homepage(self):
+        return "/staff/list_books"""
 
 class EditorChief(Staff):
 
@@ -104,9 +104,8 @@ class EditorChief(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
-    def get_homepage(self):
-        return "/staff/list_books"
-
+    """def get_homepage(self):
+        return "/staff/list_books"""
 
 class ChiefDesigner(Staff):
 
@@ -116,9 +115,8 @@ class ChiefDesigner(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
-    def get_homepage(self):
-        return "/staff/list_books"
-
+    """def get_homepage(self):
+        return "/staff/list_books"""
 
 class Designer(Staff):
 

@@ -3,24 +3,16 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/css_InicioBookiernes.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
-
 
     <title>{% block title %}Bookiernes{% endblock %}</title>
 </head>
 
 <body>
-
-
+<div id="header">
+    {% include "users/header.html" %}
+</div>
 <div id="sidebar">
-    {% if role == 'Writer' %}
-        {% include "navbars/navbar_Escritor.html" %}
-    {% elif role == 'Editor in chief' %}
-        {% include "navbars/navbar_Editor.html" %}
-    {% endif %}
+    {% include "navbars/navbar_base.html" %}
 </div>
 
 <div id="footer">

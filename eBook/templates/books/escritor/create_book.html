@@ -1,0 +1,28 @@
+{% extends 'navbars/navbar_base.html' %}
+{% load static %}
+
+{% block navbarEs %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block navbar %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block navbarXS %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block content %}
+
+    <div class="formulario-registro">
+        <div class="container">
+            <div class="contenido-formulario">
+                <h2 style="color: white"> Regístrar Libro </h2>
+                <form id="formulari" method="post" enctype="multipart/form-data" action="">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <input class="btn btn-stroked-dark" type="submit" value="Enviar"/>
+                    <input style="display: none" type="submit" id="valmenu" value="updateBook"/>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

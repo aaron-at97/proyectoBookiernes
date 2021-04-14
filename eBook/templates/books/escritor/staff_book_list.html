@@ -1,0 +1,25 @@
+{% extends 'navbars/navbar_base.html' %}
+{% load static %}
+
+{% block navbarEs %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block navbar %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block navbarXS %}
+    {% include 'navbars/navbar_Escritor.html' %}
+{% endblock %}
+{% block content %}
+    <h1>
+        Libros
+    </h1>
+    <ul style="color: white">
+        {% for element in object_list %}
+            <li style="color: white">{{ element.title }} </li>
+        {% endfor %}
+    </ul>
+
+    <input style="display: none" type="submit" id="valmenu" value="myBooks"/>
+
+{% endblock %}

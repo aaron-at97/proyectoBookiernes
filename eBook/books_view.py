@@ -12,7 +12,7 @@ from eBook.forms import BookForm
 
 class BooksList(ListView, LoginRequiredMixinStaff):
     model = Book
-    template_name = 'books/staff_book_list.html'
+    template_name = 'books/escritor/staff_book_list.html'
 
     def get_context_data(self, **kwargs):
         context = super(BooksList, self).get_context_data(**kwargs)
@@ -31,7 +31,7 @@ def BookCreate(request):
         form.save()
 
     context['form'] = form
-    return render(request, "books/create_book.html", context)
+    return render(request, "books/escritor/create_book.html", context)
 
 
 

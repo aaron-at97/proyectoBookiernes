@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView
 
 from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer
 
@@ -29,3 +30,13 @@ def get_member(user):
         return Developer.objects.get(user=user)
 
     return None
+
+
+class rolsStaff(TemplateView):
+    template_name = 'navbars/navbar_base.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(rolsStaff, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['role'] = member.role
+        return context
