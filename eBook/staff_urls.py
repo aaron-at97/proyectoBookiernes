@@ -13,5 +13,5 @@ urlpatterns = [
     path('book_acept/', TemplateView.as_view(template_name='books/editor/libros_aceptados.html'), name="book_acept"),
     path('book_rejected/', TemplateView.as_view(template_name='books/editor/libros_rechazados.html'), name='book_rejected'),
     path('index/', rolsStaff.as_view(), name='rolsbook'),
+    path('book_publish/asignedEditor/', TemplateView.as_view(template_name='books/editor/asignar_editor.html'), name='asignedEd'),
 ]
-"""path('index/', rolsStaff.as_view(), name='rols'),"""

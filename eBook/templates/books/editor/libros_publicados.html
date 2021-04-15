@@ -13,7 +13,7 @@
     <table class="table">
         <tbody>
         <tr>
-            <td style="    font-weight: bold">Descargar libro</td>
+            <td style="font-weight: bold">Descargar libro</td>
             <td style="font-weight: bold"> Titulo libro</td>
             <td style="font-weight: bold"> Nombre autor</td>
             <td style="font-weight: bold">Genero</td>
@@ -35,7 +35,7 @@
             <td>
                 <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
                 <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
-                <button class="btn btn-primary fa fa-pencil" name="aceptar"></button>
+                <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
 
             </td>
         </tr>
@@ -75,4 +75,6 @@
         </tbody>
     </table>
     <input style="display: none" type="submit" id="valmenu" value="bookpublish"/>
+{% endblock %}
+{% block popUp %}
 {% endblock %}

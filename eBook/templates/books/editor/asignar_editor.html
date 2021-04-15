@@ -1,0 +1,23 @@
+{% extends 'books/editor/libros_publicados.html' %}
+
+{% block popUp %}
+
+    <div class="ventana">
+        <div class="contenido-ventana">
+            <span class="boton-cerrar"></span>
+            <h1>Seleccione el editor al que desea asignar el siguiente libro para su revisión:</h1>
+            <label>Editores: </label>
+            <select class="selectPop">
+                <option value="Jordi Virgili">Jordi Virgili</option>
+                <option value="Marta Oliva">Marta Oliva</option>
+                <option value="Editor1">Editor1</option>
+                <option value="Editor2">Editor2</option>
+            </select>
+              <div class="center">
+                <a href="{% url 'book_publish' %}" class="btn-default-bookiernes">Aceptar</a>
+              </div>
+
+        </div>
+    </div>
+
+{% endblock %}
