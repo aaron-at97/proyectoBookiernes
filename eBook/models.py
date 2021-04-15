@@ -10,6 +10,7 @@ class Book(models.Model):
     title = models.CharField(blank=False, null=False, max_length=64)
     body = models.TextField(blank=False)
     deleted = models.BooleanField(default=False, null=False, blank=False)
+    date = models.DateField(default=date.today)
 
     STATUS = (
         (0, 'Presented'),
