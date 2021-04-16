@@ -4,6 +4,8 @@
         {% include "navbars/navbar_Escritor.html" %}
     {% elif role == 'Editor in chief' %}
         {% include "navbars/navbar_Editor.html" %}
+    {% elif role == 'Editor' %}
+        {% include "navbars/navbar_Editor.html" %}
     {% endif %}
 {% endblock %}
 
@@ -11,6 +13,8 @@
     {% if role == 'Writer' %}
         {% include "navbars/navbar_Escritor.html" %}
     {% elif role == 'Editor in chief' %}
+        {% include "navbars/navbar_Editor.html" %}
+    {% elif role == 'Editor' %}
         {% include "navbars/navbar_Editor.html" %}
     {% endif %}
 {% endblock %}

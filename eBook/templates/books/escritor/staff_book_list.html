@@ -1,5 +1,5 @@
 {% extends 'navbars/navbar_base.html' %}
-
+{% load static %}
 {% block navbar %}
     {% include "navbars/navbar_Escritor.html" %}
 {% endblock %}
@@ -9,14 +9,47 @@
 {% endblock %}
 
 {% block content %}
-    <h1>
-        Libros
-    </h1>
-    <ul style="color: white">
+    <h1>Estado de mis libros</h1>
+    <style>
+
+        .listBook {
+            position: relative;
+            font-family: Aro;
+            box-shadow: 0 0 4px 1px rgb(24 23 23) !important;
+            background-color: white;
+            margin: 4% 4%;
+            color: #1B273B;
+            padding: 0 2%;
+            height: 250px;
+        }
+
+        .listBook p {
+            font-size: 18px;
+            margin-bottom: 3%;
+        }
+
+        .listBook h2 {
+            margin-bottom: 5%;
+        }
+        .listBook img {
+            color: white;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+    <div class="row">
         {% for element in object_list %}
-            <li style="color: white">{{ element.title }} </li>
+            <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
+                <h2> {{ element.title }} </h2>
+                <p> Fecha subida: 10/03/21</p>
+                <img src="../../static/img/Estados/{{ element.state }}.png">
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 
     <input style="display: none" type="submit" id="valmenu" value="myBooks"/>
 
