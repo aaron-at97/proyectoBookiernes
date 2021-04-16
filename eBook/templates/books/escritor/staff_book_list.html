@@ -45,7 +45,7 @@
         {% for element in object_list %}
             <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
                 <h2> {{ element.title }} </h2>
-                <p> Fecha subida: 10/03/21</p>
+                <p> Fecha subida: {{ element.date | date:"d/m/Y" }}</p>
                 <img src="../../static/img/Estados/{{ element.state }}.png">
             </div>
         {% endfor %}

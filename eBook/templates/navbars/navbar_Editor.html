@@ -13,9 +13,20 @@
         }
     });
 </script>
-
+<style>
+    .noti {
+        color: #2f8cf7;
+        box-shadow: 0 0 5px 0 rgb(255 255 255) !important;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #2f8cf7;
+        width: 14px;
+        height: 14px;
+    }
+</style>
 <li id="notificaciones" class="notificaciones">
-    <a href=""><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
+    <a href=""><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
 </li>
 <li class="bookpublish" id="submenu-item-account-overview">
     <a href="{% url 'book_publish' %}"><i class="fa fa-book" aria-hidden="true"></i> Asignar
@@ -30,10 +41,6 @@
 <li class="bookacept" id="submenu-item-family-plan">
     <a href="{% url 'book_acept' %}"><i class="fa fa-check" aria-hidden="true"></i> Libros
         aceptados </a>
-</li>
-
-<li id="listalibros">
-    <a href=""><i class="fa fa-file-o" aria-hidden="true"></i> Solicitud de imagenes </a>
 </li>
 
 <li id="salir">

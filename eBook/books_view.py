@@ -4,7 +4,7 @@ from django.http import HttpRequest
 from django.shortcuts import render
 
 from eBook.models import Book
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView
 from eBook.views import get_member
 from eBook.views import LoginRequiredMixinStaff
 from eBook.forms import BookForm
@@ -23,20 +23,15 @@ class BooksList(ListView, LoginRequiredMixinStaff):
             return context
 
 
-def BookCreate(request):
-    context = {}
-    form = BookForm(request.POST or None, request.FILES or None)
+class BookCreate(HttpRequest):
 
-    if form.is_valid():
-        form.save()
+    def index(request):
+        booklist = BookForm()
+        return render(request, "books/escritor/create_book.html", {"form": booklist})
 
-    context['form'] = form
-    return render(request, "books/escritor/create_book.html", context)
-
-
-
-
-
-
-
-
+    def procesar_formulario(request):
+        booklist = BookForm(request.POST)
+        if booklist.is_valid():
+            booklist.save()
+            booklist = BookForm()
+        return render(request, "books/escritor/create_book.html", {"form": booklist, "mensaje": 'OK'})

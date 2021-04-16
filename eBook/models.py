@@ -8,6 +8,7 @@ from django.forms import ModelForm
 class Book(models.Model):
     id_book = models.CharField(blank=False, null=False, max_length=64)
     title = models.CharField(blank=False, null=False, max_length=64)
+    genere = models.CharField(blank=False, null=True, max_length=64)
     body = models.TextField(blank=False)
     deleted = models.BooleanField(default=False, null=False, blank=False)
     date = models.DateField(default=date.today)

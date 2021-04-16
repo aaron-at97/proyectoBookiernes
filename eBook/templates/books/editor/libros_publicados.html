@@ -35,8 +35,9 @@
             <td>
                 <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
                 <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
-                <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
-
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
             </td>
         </tr>
         <tr>
@@ -51,8 +52,9 @@
             <td>
                 <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
                 <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
-                <button class="btn btn-primary fa fa-pencil" name="aceptar"></button>
-
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
             </td>
         </tr>
         <tr>
@@ -67,7 +69,9 @@
             <td>
                 <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
                 <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
-                <button class="btn btn-primary fa fa-pencil" name="aceptar"></button>
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
             </td>
         </tr>
 

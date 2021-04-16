@@ -38,9 +38,11 @@ class BookForm(ModelForm):
         model = Book
         fields = ['id_book',
                   'title',
+                  'genere',
                   'body',
                   ]
 
-    id_book = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Id libro',}),label='')
+    id_book = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'ISBN',}),label='')
     title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Titulo',}),label='')
+    genere = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Genero',}),label='')
     body = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Descripcion',}),label='')
