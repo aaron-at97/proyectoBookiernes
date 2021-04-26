@@ -25,7 +25,7 @@
     }
 </style>
 <li id="notificaciones" class="notificaciones">
-    <a href=""><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i>
+    <a href="{% url 'notifyEs' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i>
         Notificaciones </a>
 </li>
 <li id="myBooks" class="myBooks">
@@ -39,5 +39,5 @@
 </li>
 
 <li id="salir">
-    <a href=""><i class="fa fa-undo" aria-hidden="true"></i> Salir </a>
+    <a href="{% url 'login' %}"><i class="fa fa-undo" aria-hidden="true"></i> Salir </a>
 </li>

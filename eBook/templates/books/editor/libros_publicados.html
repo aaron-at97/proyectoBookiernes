@@ -34,7 +34,7 @@
             <td> Por asignar</td>
             <td>
                 <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
-                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+                <a href="{% url 'rejectBook' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
                 {% if role == 'Editor in chief' %}
                     <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
                 {% endif %}

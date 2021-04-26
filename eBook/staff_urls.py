@@ -3,7 +3,7 @@ from eBook.auth_views import LoginView
 from django.urls import path
 from django.conf.urls import url
 from eBook.books_view import BooksList, BookCreate
-from eBook.views import rolsStaff, editorsChief
+from eBook.views import rolsStaff, notifyEs, notifyEd, editorsChief
 
 urlpatterns = [
     url(r'^$', LoginView.as_view(), name="login"),
@@ -15,4 +15,8 @@ urlpatterns = [
     path('book_rejected/', TemplateView.as_view(template_name='books/editor/libros_rechazados.html'), name='book_rejected'),
     path('index/', rolsStaff.as_view(), name='rolsbook'),
     path('book_publish/asignedEditor/', TemplateView.as_view(template_name='books/editor/asignar_editor.html'), name='asignedEd'),
+    path('book_publish/rejectBook/', TemplateView.as_view(template_name='books/editor/rechazar_libror.html'), name='rejectBook'),
+    path('book_publish/motiveReject/', TemplateView.as_view(template_name='books/escritor/motivo_rechazo.html'), name='motiveReject'),
+    path('notifyEd/', notifyEs.as_view(), name='notifyEs'),
+    path('notifyEs/', notifyEd.as_view(), name='notifyEd'),
 ]

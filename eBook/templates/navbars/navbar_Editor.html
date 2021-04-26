@@ -26,7 +26,7 @@
     }
 </style>
 <li id="notificaciones" class="notificaciones">
-    <a href=""><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
+    <a href="{% url 'notifyEd' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
 </li>
 <li class="bookpublish" id="submenu-item-account-overview">
     <a href="{% url 'book_publish' %}"><i class="fa fa-book" aria-hidden="true"></i> Asignar
@@ -44,5 +44,5 @@
 </li>
 
 <li id="salir">
-    <a href=""><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
+    <a href="{% url 'login' %}"><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
 </li>

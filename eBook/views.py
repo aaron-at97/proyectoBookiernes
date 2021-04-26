@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
-from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer, Book
+from eBook.models import Editor, EditorChief, Writer, ChiefDesigner, Designer, CTO, Developer, Notification, Book
 
 
 class LoginRequiredMixinStaff(object):
@@ -33,14 +33,14 @@ def get_member(user):
 
 
 class rolsStaff(TemplateView):
-    second_model = Book
+    second_model = Notification
     template_name = 'navbars/control_rol.html'
 
     def get_context_data(self, **kwargs):
         context = super(rolsStaff, self).get_context_data(**kwargs)
         member = get_member(self.request.user)
         context['role'] = member.role
-        context['book'] = Book.objects.filter(state=0)
+        context['notify'] = Notification.objects.filter()
 
         return context
 
@@ -55,3 +55,27 @@ class editorsChief(TemplateView):
         context['role'] = member.role
 
         return context
+
+class notifyEs(TemplateView):
+    model = Notification
+    template_name = 'books/escritor/notificaciones.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(notifyEs, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['notify'] = Notification.objects.filter()
+
+        return context
+
+class notifyEd(TemplateView):
+    model = Notification
+    template_name = 'books/editor/notificaciones.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(notifyEd, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['role'] = member.role
+        context['notify'] = Notification.objects.filter()
+
+        return context
+

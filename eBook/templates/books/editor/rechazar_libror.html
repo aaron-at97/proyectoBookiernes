@@ -1,0 +1,17 @@
+{% extends 'books/editor/libros_publicados.html' %}
+
+{% block popUp %}
+
+    <div class="ventana">
+        <div class="contenido-ventana">
+            <span class="boton-cerrar"></span>
+            <h1>Motivos del rechazo del libro "Cañas y Barro":</h1>
+            <textarea style="width: 100%; height: 422px;"></textarea>
+            <p style="color: #1B273B">Si el escriptor soluciona los errores por los cuales se a decidido rechazar su libro se podrá aceptar en apartado "libros rechazados"</p>
+              <div class="center">
+                <a href="{% url 'book_publish' %}" class="btn-default-bookiernes">Aceptar</a>
+              </div>
+        </div>
+    </div>
+
+{% endblock %}
