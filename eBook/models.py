@@ -2,9 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
-from django.forms import ModelForm
-
-
 class Book(models.Model):
     id_book = models.CharField(blank=False, null=False, max_length=64)
     title = models.CharField(blank=False, null=False, max_length=64)
@@ -35,7 +32,6 @@ class Book(models.Model):
 
     def __unicode__(self):
         return u"%s" % self.title
-
 
 class Notification(models.Model):
     book_key = models.ForeignKey(Book, on_delete=models.CASCADE)
