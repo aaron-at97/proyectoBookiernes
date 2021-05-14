@@ -4,7 +4,7 @@ from django.urls import path
 from django.conf.urls import url
 from eBook.books_view import BooksList, BookCreate
 from eBook.image_view import BooksImageList, BooksPublishList
-from eBook.views import rolsStaff, notifyEs, notifyEd, editorsChief
+from eBook.views import rolsStaff, notifyEs, notifyEd, editorsChief, disenyChief
 
 urlpatterns = [
     url(r'^$', LoginView.as_view(), name="login"),
@@ -21,8 +21,11 @@ urlpatterns = [
     path('book_publish/motiveReject/', TemplateView.as_view(template_name='books/escritor/motivo_rechazo.html'), name='motiveReject'),
 
     path('book_image/list_books_image', BooksImageList.as_view(), name="list_book_image"),
+    path('book_image/asign_diseny', disenyChief.as_view(), name="asign_diseny"),
+
     path('book_publish/list_books_publish', BooksPublishList.as_view(), name="list_book_publish"),
 
     path('notifyEd/', notifyEs.as_view(), name='notifyEs'),
     path('notifyEs/', notifyEd.as_view(), name='notifyEd'),
+
 ]
