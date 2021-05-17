@@ -1,11 +1,10 @@
 {% extends 'navbars/navbar_base.html' %}
-
 {% block navbar %}
-    {% include "navbars/navbar_Editor.html" %}
+    {% include "navbars/navbar_Diseñador.html" %}
 {% endblock %}
 
 {% block navbarXS %}
-    {% include "navbars/navbar_Editor.html" %}
+    {% include "navbars/navbar_Diseñador.html" %}
 {% endblock %}
 
 {% block content %}
@@ -34,7 +33,7 @@
             <td> Por asignar</td>
             <td>
                 {% if role == 'Chief designer' %}
-                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                    <a href="{% url 'push_disenyPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
                 {% endif %}
             </td>
         </tr>
@@ -49,7 +48,7 @@
             <td> Por asignar</td>
             <td>
                 {% if role == 'Chief designer' %}
-                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                    <a href="{% url 'push_disenyPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
                 {% endif %}
             </td>
         </tr>
@@ -64,14 +63,14 @@
             <td> Por asignar</td>
             <td>
                 {% if role == 'Chief designer' %}
-                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                    <a href="{% url 'push_disenyPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
                 {% endif %}
             </td>
         </tr>
 
         </tbody>
     </table>
-    <input style="display: none" type="submit" id="valmenu" value="bookpublish"/>
+    <input style="display: none" type="submit" id="valmenu" value="book2"/>
 {% endblock %}
 {% block popUp %}
 {% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Diseñador.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Diseñador.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <script>
+        $(document).on('change', '.btn-file :file', function () {
+            var input = $(this);
+            var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+            var label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+        $(document).ready(function () {
+            $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+                var input = $(this).parents('.input-group').find(':text');
+                var log = numFiles > 1 ? numFiles + ' files selected' : label;
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+            });
+        });
+    </script>
+
+    <div class="container">
+            <div class="center">
+                <h1>Subir bateria de imágenes</h1>
+            </div>
+            <label style="float: left; margin: 1% 25%;"> Seleccione el nombre del libro: </label>
+            <select class="selectPop" style="clear: both; float: left; margin: 1% 25%;">
+                <option value="El futuro de nuestra mente"> El futuro de nuestra mente</option>
+                <option value="La celestina"> La celestina</option>
+            </select>
+            <div class="input-group" style="clear: both; float: left; width: 50%; margin: 1% 25%;">
+                <label class="input-group-btn">
+                                <span class="btn btn-default btn-file fa fa-folder-open-o">
+                                    <a style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif; text-decoration: none; color: #444;">
+                                        Seleccionar archivos
+                                    </a>
+                                    <input accept=".jpg,.png,.jpeg,.gif,.zip" class="hidden" name="banner" type="file" id="banner">
+                                </span>
+                </label>
+                <input class="form-control" id="banner_captura" readonly="readonly"
+                       name="banner_captura" type="text" value="">
+            </div>
+            <div class="center">
+                <input class="btn btn-stroked-dark" type="submit" value="Enviar"/>
+            </div>
+        </div>
+    </div>
+
+    <input style="display: none" type="submit" id="valmenu" value="book3"/>
+
+
+{% endblock %}
