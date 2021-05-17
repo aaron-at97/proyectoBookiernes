@@ -21,7 +21,7 @@
             margin: 4% 4%;
             color: #1B273B;
             padding: 0 2%;
-            height: 250px;
+            height: 310px;
         }
 
         .listBook p {
@@ -65,21 +65,45 @@
             font-weight: bold;
             font-size: 20px;
         }
+
+        .listBook .imgrec {
+            color: #1B273B;
+            float: right;
+            margin-right: 7%;
+            margin-bottom: 17%;
+            position: absolute;
+            right: 18px;
+            bottom: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
     </style>
 
     <div class="row">
+
         {% for element in object_list %}
             {% if element.state > 3 and element.state < 7 %}
                 <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
                     <h2> {{ element.title }} </h2>
                     <p> Fecha subida: {{ element.date | date:"d/m/Y" }}</p>
-
+                    <p> Autor: Aitor Corchero</p>
+                    <p> Genero: {{ element.genere }}</p>
+                    {% ifnotequal element.state 4 %}
+                        <div class="imgrec">
+                            <h3 style="font-weight: bold;"> Archivos: </h3>
+                            <p> img.jpg</p>
+                            <p> img2.jpg</p>
+                            <p> img3.jpg</p>
+                        </div>
+                    {% endifnotequal %}
                     {% ifequal element.state 6 %}
+
                         <img class="img1" src="../../static/img/Estados/{{ element.state }}.png">
                         <a href="{% url 'motiveReject' %}">Ver motivo</a>
                     {% endifequal %}
 
                     {% if element.state > 3 and element.state < 6 %}
+
                         <img src="../../static/img/Estados/{{ element.state }}.png">
                     {% endif %}
                 </div>
@@ -87,7 +111,7 @@
         {% endfor %}
     </div>
 
-    <input style="display: none" type="submit" id="valmenu" value="myBooks"/>
+    <input style="display: none" type="submit" id="valmenu" value="book1"/>
 
 {% endblock %}
 
