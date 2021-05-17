@@ -29,6 +29,12 @@ urlpatterns = [
     path('book_publish/list_books_publish', BooksPublishList.as_view(), name="list_book_publish"),
     path('book_publish/subir_libro', TemplateView.as_view(template_name='books/maquetador/publish_book.html'), name="subir_libro"),
     path('book_publish/book_publicate', TemplateView.as_view(template_name='books/maquetador/book_publicate.html'), name="book_publicate"),
+
+    path('book_image/rev_img', TemplateView.as_view(template_name='books/editor/rev_img.html'), name="revImg"),
+    path('book_image/sol_img', TemplateView.as_view(template_name='books/editor/solicitud_img.html'), name="solImg"),
+    path('book_image/ver_img', TemplateView.as_view(template_name='books/editor/ver_imagenes.html'), name="ver_img"),
+    path('book_image/reject_bookBatery', TemplateView.as_view(template_name='books/editor/rechazar_solicitudImg.html'), name="rejectBookBatery"),
+
     path('notifyEd/', notifyEs.as_view(), name='notifyEs'),
     path('notifyEs/', notifyEd.as_view(), name='notifyEd'),
     path('notifyDis/', notifyDis.as_view(), name='notifyDis'),
