@@ -4,7 +4,7 @@ from django.urls import path
 from django.conf.urls import url
 from eBook.books_view import BooksList, BookCreate
 from eBook.image_view import BooksImageList, BooksPublishList
-from eBook.views import rolsStaff, notifyEs, notifyEd, editorsChief
+from eBook.views import rolsStaff, notifyEs, notifyEd, notifyDis, notifyMaq, editorsChief, disenyChief
 
 urlpatterns = [
     url(r'^$', LoginView.as_view(), name="login"),
@@ -19,10 +19,18 @@ urlpatterns = [
     path('book_publish/asignedEditor/', TemplateView.as_view(template_name='books/editor/asignar_editor.html'), name='asignedEd'),
     path('book_publish/rejectBook/', TemplateView.as_view(template_name='books/editor/rechazar_libror.html'), name='rejectBook'),
     path('book_publish/motiveReject/', TemplateView.as_view(template_name='books/escritor/motivo_rechazo.html'), name='motiveReject'),
+    path('book_publish/motiveReject/', TemplateView.as_view(template_name='books/escritor/motivo_rechazo.html'), name='motiveReject'),
 
     path('book_image/list_books_image', BooksImageList.as_view(), name="list_book_image"),
-    path('book_publish/list_books_publish', BooksPublishList.as_view(), name="list_book_publish"),
+    path('book_image/push_diseny', TemplateView.as_view(template_name='books/diseñador/push_diseny.html'), name='push_diseny'),
+    path('book_image/asign_diseny', disenyChief.as_view(), name="asign_diseny"),
+    path('book_image/asign_disenyPop', TemplateView.as_view(template_name='books/diseñador/asignar_popUp.html'), name='push_disenyPopUp'),
 
+    path('book_publish/list_books_publish', BooksPublishList.as_view(), name="list_book_publish"),
+    path('book_publish/subir_libro', TemplateView.as_view(template_name='books/maquetador/publish_book.html'), name="subir_libro"),
+    path('book_publish/book_publicate', TemplateView.as_view(template_name='books/maquetador/book_publicate.html'), name="book_publicate"),
     path('notifyEd/', notifyEs.as_view(), name='notifyEs'),
     path('notifyEs/', notifyEd.as_view(), name='notifyEd'),
+    path('notifyDis/', notifyDis.as_view(), name='notifyDis'),
+    path('notifyMaq/', notifyMaq.as_view(), name='notifyMaq'),
 ]

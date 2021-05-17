@@ -1,0 +1,122 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+{% block content %}
+    <h1> Aceptar imágenes proporcionadas </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold">Descargar libro</td>
+            <td style="font-weight: bold">Descargar batería imágenes</td>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Publicar</td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> Cañas y barro</td>
+            <td> Aitor Corchero</td>
+            <td> Novela</td>
+            <td> 10/03/2021</td>
+            <td><p>Por publicar</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> El futuro de nuestra mente</td>
+            <td>Aitor Corchero</td>
+            <td>Investigación científica</td>
+            <td> 10/03/2021</td>
+            <td><p>Por publicar</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> Sueños de papel </td>
+            <td>Aitor Corchero</td>
+            <td>Drama</td>
+            <td> 10/03/2021</td>
+            <td><p>Por publicar</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> El principe del mal</td>
+            <td> Mark Lawrence </td>
+            <td> Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Publicado</p></td>
+            <td>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> La columna de fuego</td>
+            <td> Ken Follet </td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Publicado</p></td>
+            <td>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> Juego de tronos</td>
+            <td>Aitor Corchero</td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Publicado</p></td>
+            <td>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="bookpublish"/>
+{% endblock %}

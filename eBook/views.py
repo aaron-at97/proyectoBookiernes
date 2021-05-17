@@ -79,3 +79,35 @@ class notifyEd(TemplateView):
 
         return context
 
+class notifyDis(TemplateView):
+    model = Notification
+    template_name = 'books/diseñador/notificaciones.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(notifyDis, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['notify'] = Notification.objects.filter()
+
+        return context
+
+class notifyMaq(TemplateView):
+    model = Notification
+    template_name = 'books/maquetador/notificaciones.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(notifyMaq, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['notify'] = Notification.objects.filter()
+
+        return context
+
+class disenyChief(TemplateView):
+    second_model = Book
+    template_name = 'books/diseñador/disenyo_asig.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(disenyChief, self).get_context_data(**kwargs)
+        member = get_member(self.request.user)
+        context['role'] = member.role
+
+        return context
