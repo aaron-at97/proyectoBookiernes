@@ -1,0 +1,61 @@
+{% extends 'books/editor/rev_img.html' %}
+
+{% block popUp %}
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+    <head>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    </head>
+    <style>
+
+        .btn-success {
+            color: #fff !important;
+            background-color: #5cb85c !important;
+            border-color: #4cae4c !important;
+        }
+
+        .btn-danger {
+            color: #fff !important;
+            background-color: #d9534f !important;
+            border-color: #d43f3a !important;
+        }
+
+        .btn {
+            display: inline-block !important;
+            padding: 6px 12px !important;
+            margin-bottom: 0 !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.42857143 !important;
+            border-radius: 4px !important;
+        }
+
+    </style>
+    <div class="ventana">
+        <div class="contenido-ventana" style="width: 71rem;">
+            <span class="boton-cerrar"></span>
+            <h1 style="font-size: 36px;">Bateria imágenes del libro "Cañas y Barro":</h1>
+            <div class="carousel">
+                <a class="carousel-item" href="#"><img style="width: auto; height: 300px"
+                                                       src="../../../../static/img/Libros/Cañas%20y%20barro/img1.jpg"></a>
+                <a class="carousel-item" href="#"><img style="width: auto; height: 300px"
+                                                       src="../../../../static/img/Libros/Cañas%20y%20barro/img2.jpg"></a>
+                <a class="carousel-item" href="#"><img style="width: auto; height: 300px"
+                                                       src="../../../../static/img/Libros/Cañas%20y%20barro/img3.jpg"></a>
+            </div>
+
+            <div class="center">
+                <a href="{% url 'revImg' %}" class="btn-default-bookiernes"> Aceptar </a>
+                <a href="{% url 'revImg' %}" class="btn-default-bookiernes"> Descargar batería de imágenes </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
