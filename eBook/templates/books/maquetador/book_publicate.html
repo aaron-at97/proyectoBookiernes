@@ -1,0 +1,336 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+{% block content %}
+    <style>
+
+        #poner {
+            margin-top: 5%;
+        }
+
+        body {
+            background: url(../../../../static/img/fondo.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .borde {
+
+            border-bottom: 25px solid #718986;
+            height: auto;
+            margin: 0 auto;
+            box-shadow: 0 0 4px -2px rgb(255, 255, 255) !important;
+        }
+
+        .album-results figure {
+            height: 450px !important;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.84) !important;
+        }
+
+        .navbar {
+            margin-bottom: 0px;
+        }
+
+        nav {
+            background: black !important;
+        }
+
+        body {
+            margin: 0
+        }
+
+        body {
+            font-family: Circular, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+            background-color: #1B273B;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+        }
+
+
+        .album-results figure {
+            width: 100%;
+            height: 350px !important;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, .3);
+            cursor: pointer;
+        }
+
+        .index-segmented-body .album-results-free {
+            text-align: center;
+            color: #000;
+        }
+
+        .album-results .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .album-results .img-responsive {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .album-results li:hover .content-overlay {
+            opacity: 1;
+        }
+
+        .album-results li:hover .content-details {
+            top: 50%;
+            left: 50%;
+            opacity: 1;
+        }
+
+        .album-results .content-details {
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transition: all .2s ease-in-out 0s;
+            -o-transition: all .2s ease-in-out 0s;
+            transition: all .2s ease-in-out 0s;
+            position: absolute;
+            text-align: center;
+            padding-left: 1em;
+            padding-right: 1em;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+            display: block;
+        }
+
+
+        .album-results .album-play-button h2 {
+            font-size: 32px;
+        }
+
+        .album-results .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        h4, p.lead {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .btn-link {
+            color: #1db954;
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: 700;
+            min-width: 0;
+        }
+
+        .album-results figure .content-overlay {
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            background: rgba(0, 0, 0, .8);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+        }
+
+        .album-results li {
+            padding: 8px;
+        }
+
+        .album-results li {
+            list-style-type: none;
+        }
+
+        .album-results figure {
+            cursor: pointer;
+        }
+
+        .album-results .img-responsive {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .album-results img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .index-segmented-body .album-results-free {
+            text-align: center;
+            color: #000;
+        }
+
+        .btn-link:focus, .btn-link:hover {
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .btn-link, .btn-link:active, .btn-link:focus, .btn-link:hover {
+            border-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: 700;
+            min-width: 0;
+        }
+
+        .btn-link .azul-claro {
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            color: #13aac5 !important;
+            text-decoration: none;
+            background: transparent !important;
+            border: none;
+        }
+
+        .btn-link .azul-claro:hover, .btn-link .azul-claro:focus {
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            color: #2d46b9 !important;
+            text-decoration: none;
+        }
+
+
+    </style>
+
+    <h1> Libros publicados </h1>
+
+    <li class='col-xs-12 col-sm-6 col-md-3 col-lg-2 js-album-results-1 borde'>
+        <figure>
+
+            <div class='box'>
+                <div class='content'>
+                    <img class='img-responsive' src='../../../../static/img/Libros/columna.jpg'>
+                </div>
+            </div>
+
+            <div class='content-overlay'></div>
+
+            <div class='content-details'>
+                <form action='Login_libro.php' method='post'>
+                    <figcaption class='album-play-button'>
+                        <h2 class='text-white'><input type='hidden' name='libro' value='Una columna de fuego'>Una
+                            columna de fuego
+                        </h2></input>
+                        <h4 class='text-white'><input type='hidden' name='autor' value='Ken Follet'>Ken Follet
+                        </h4></input>
+                        <div id='segmented-play-now' class='btn btn-link'>
+                            <input type='hidden' name='foto' value='$row[0]'>
+                            <button type='submit' class='azul-claro' value='LEER YA'> LEER YA</button>
+                        </div>
+                    </figcaption>
+                </form>
+
+            </div>
+        </figure>
+    </li>
+    <li class='col-xs-12 col-sm-6 col-md-3 col-lg-2 js-album-results-1 borde'>
+        <figure>
+
+            <div class='box'>
+                <div class='content'>
+                    <img class='img-responsive' src='../../../../static/img/Libros/principe del mal.jpg'>
+                </div>
+            </div>
+
+            <div class='content-overlay'></div>
+
+            <div class='content-details'>
+                <form action='Login_libro.php' method='post'>
+                    <figcaption class='album-play-button'>
+                        <h2 class='text-white'><input type='hidden' name='libro' value='El principe del mal'>El principe
+                            del mal
+                        </h2></input>
+                        <h4 class='text-white'><input type='hidden' name='autor' value='Mark Lawrence'>Mark Lawrence
+                        </h4></input>
+                        <div id='segmented-play-now' class='btn btn-link'>
+                            <input type='hidden' name='foto' value='$row[0]'>
+                            <button type='submit' class='azul-claro' value='LEER YA'> LEER YA</button>
+                        </div>
+                    </figcaption>
+                </form>
+
+
+            </div>
+        </figure>
+    </li>
+     <li class='col-xs-12 col-sm-6 col-md-3 col-lg-2 js-album-results-1 borde'>
+        <figure>
+
+            <div class='box'>
+                <div class='content'>
+                    <img class='img-responsive' src='../../../../static/img/Libros/juego%20de%20tronos.jpg'>
+                </div>
+            </div>
+
+            <div class='content-overlay'></div>
+
+            <div class='content-details'>
+                <form action='Login_libro.php' method='post'>
+                    <figcaption class='album-play-button'>
+                        <h2 class='text-white'><input type='hidden' name='libro' value='Juego de tronos'>Juego de tronos</h2></input>
+                        <h4 class='text-white'><input type='hidden' name='autor' value='Mark Lawrence'>Aitor Corchero</h4></input>
+                        <div id='segmented-play-now' class='btn btn-link'>
+                            <input type='hidden' name='foto' value='$row[0]'>
+                            <button type='submit' class='azul-claro' value='LEER YA'> LEER YA</button>
+                        </div>
+                    </figcaption>
+                </form>
+
+
+            </div>
+        </figure>
+    </li>
+    <input style="display: none" type="submit" id="valmenu" value="bookpublicate"/>
+{% endblock %}
+{% block search %}
+<style>
+   .navbar li {
+            float: left;
+            width: auto;
+        }
+
+
+
+        .form-group {
+            width: 70%;
+            float: left;
+        }
+</style>
+
+        <nav class="navbar negro-bg menu2" style="width: auto; position: fixed; background-color: #161719 !important;">
+        <div class="container-fluid">
+            <div class="buscadorcle navbar-form navbar-left" style="margin: 15px;">
+                <div class="form-group" style="padding-left: 20px;">
+                    <input type="text" class="form-control" name="buscador" id="buscardor" value=""
+                           placeholder="Titulo">
+                </div>
+                <button id="botonB" class="btn btn-default">Buscar</button>
+            </div>
+
+        </div><!-- /.container-fluid -->
+    </nav>
+{% endblock %}
