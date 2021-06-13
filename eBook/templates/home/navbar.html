@@ -1,0 +1,40 @@
+{% load static %}
+
+<!-- cuerpo -->
+<link rel="stylesheet" href="{% static 'css/cuerpo.css' %}"/>
+{% block navbar %}
+    <!-- MENU -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle margen-menu" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{% url 'home' %}" class="navbar-brand margen-color bookiernes-logo" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    <li class="active">
+                        <a href="{% url 'home' %}" class="margen-color">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'bibliotecaSinSession' %}" class="margen-color">Biblioteca</a>
+                    </li>
+                    <li role="separator" class="divider hidden-xs"></li>
+
+                    <li><a class="margen-color" href="Registrar_usuario.html"><span
+                            class="glyphicon glyphicon-user"></span> Registro </a></li>
+                    <li><a class="margen-color" href="{% url 'login' %}"><span
+                            class="glyphicon glyphicon-log-in"></span> Acceder </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
