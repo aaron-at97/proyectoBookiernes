@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
+
 class Book(models.Model):
     id_book = models.CharField(blank=False, null=False, max_length=64)
     title = models.CharField(blank=False, null=False, max_length=64)
@@ -33,6 +34,7 @@ class Book(models.Model):
     def __unicode__(self):
         return u"%s" % self.title
 
+
 class Notification(models.Model):
     book_key = models.ForeignKey(Book, on_delete=models.CASCADE)
     concept = models.TextField(blank=False, null=False, max_length=100)
@@ -59,6 +61,7 @@ class Staff(models.Model):
         ('Designer', 'Designer'),
         ('CTO', 'CTO'),
         ('Developer', 'Developer'),
+        ('Client', 'Client'),
     )
 
     role = models.CharField('Role', blank=False, null=False, choices=ROLES, max_length=25)
@@ -70,14 +73,16 @@ class Staff(models.Model):
     def get_homepage(self):
         return "index/"
 
+
 class Writer(Staff):
-    books = models.ManyToManyField(Book, blank=True)
+    books = models.ManyToManyField(Book, blank=True, related_name="escrip")
 
     def __str__(self):
         return u"%s" % self.name
 
     def __unicode__(self):
         return u"%s" % self.name
+
 
 class Editor(Staff):
     assigned = models.ManyToManyField(Book, blank=True)
@@ -133,3 +138,17 @@ class Developer(Staff):
     def __unicode__(self):
         return u"%s" % self.name
 
+
+class Clients(Staff):
+    nombre = models.CharField(blank=False, null=False, max_length=64)
+    apellido = models.CharField(blank=False, null=False, max_length=64)
+    telefon = models.IntegerField()
+    codi_postal = models.IntegerField()
+    correo = models.CharField(blank=False, null=False, max_length=64)
+    direccion = models.CharField(blank=False, null=False, max_length=64)
+
+    def __str__(self):
+        return u"%s" % self.name
+
+    def __unicode__(self):
+        return u"%s" % self.name
