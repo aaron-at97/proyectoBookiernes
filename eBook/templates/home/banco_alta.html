@@ -1,0 +1,279 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "home/header.html" %}
+    <link href="{% static 'css/banco_Alta.css' %}" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>BookIernes - Banco alta </title>
+</head>
+<body>
+<section>
+    <script>
+        $(document).ready(function () {
+            $("#redireccion").click(function () {
+                document.getElementById("ocultar").style.display = "none";
+                document.getElementById("mostrar").style.display = "block";
+                document.getElementById("mostrar2").style.display = "block";
+            });
+
+            $("#mostrar2").click(function () {
+                document.getElementById("ocultar").style.display = "block";
+                document.getElementById("mostrar").style.display = "none";
+                document.getElementById("mostrar2").style.display = "none";
+            });
+        });
+    </script>
+    <style>
+        .margen-list-content2 {
+            margin-top: 14.7%;
+            margin-bottom: 35%;
+        }
+    </style>
+    <div class="hero hero-subscription">
+        <div class="container">
+            <div class="hero-subscription-bg"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Elije tu Plan de pago</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0">
+                    <div class="list">
+                        <div class="list-item col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-1">
+                            <div class="list-content" style="margin-top: 15%;">
+                                <div class="panel-body">
+                                    <h3>Precio rebajado el primer mes</h3>
+                                    <ul class="list-unstyled list-perks list-perks-premium spotify-free-list">
+                                        <li>
+                                            Lea libros sin anuncios
+                                        </li>
+                                        <li>
+                                            Lea todos los libros que quiera
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer">
+                                    <h4>6,99 € el primer mes.</h4>
+                                </div>
+                            </div>
+                            <div class="centrar">
+                                <h3 style="display: none" id="mostrar2"> Ver otras ofertas </h3>
+                            </div>
+                        </div>
+
+                        <div class="list-item2 col-lg-5 col-md-6" id="ocultar">
+                            <div class="list-content margen-list-content">
+                                <ul class="list-unstyled list-divided list-offers">
+                                    <li class="linea-bottom" id="redireccion">
+                                        <div>
+                                            <h3>Plan Mensual</h3>
+                                            Solo 10 € al mes para ti.
+                                        </div>
+                                    </li>
+                                    <div>
+                                        <a id="volver" href="{% url 'home' %}"><h3>Inicio</h3></a>
+                                        ¿Quieres ir al inicio?
+                                    </div>
+                                </ul>
+
+
+                            </div>
+                        </div>
+
+                        <div class="list-item2 list-content margen-list-content2 list-item2 col-lg-5 col-md-6"
+                             id="mostrar" style="display: none">
+
+
+                            <div class="offer-panel-form">
+
+                                <form id="form-main-pci-credit-card" class="new-payment-form " action="" method="get">
+                                    <input id="generation-time" data-encrypted-name="generationtime"
+                                           value="2018-04-30T08:35:30+00:00" type="hidden">
+
+                                    <div class="row">
+
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardnumber" class="card-label">
+
+                                                    <span id="trans-cardnumber">Número de tarjeta</span>
+
+                                                    <span class="card-icons">
+
+<span id="provider-icons">
+<span class="icon-provider visa disabled" data-type="visa"></span><span class="icon-provider mastercard disabled"
+                                                                        data-type="mastercard"></span><span
+        class="icon-provider amex disabled" data-type="amex"></span>
+<span class="icon-provider diners disabled" data-type="diners"></span>
+<span class="icon-provider discover disabled" data-type="discover"></span></span>
+
+ <a id="secure-lock" class="icon-provider lock" data-tooltip="" data-lang="security_explained"></a>
+ </span>
+                                                </label>
+
+                                                <span class="safe-field">
+<input type="text" maxlength="16" id="cardnumber" placeholder="1111 2222 3333 4444" class="form-control"
+       onchange="comprobar_cuenta_bancaria()">
+<label id="banc-number-error" class="error" style="display: none;"></label>
+</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-xs-12">
+
+                                            <div class="form-group">
+
+                                                <label id="trans-expiration_date" for="expiration_date">Fecha de
+                                                    caducidad</label>
+
+                                                <div class="row">
+
+                                                    <div class="col-xs-6">
+                                                        <select id="expiry-month" autocomplete="cc-exp-month"
+                                                                data-encrypted-name="expiryMonth" class="form-control"
+                                                                onchange="comrpobar_mes()">
+
+                                                            <option id="trans-label_month" value="" default="default"
+                                                                    selected="selected">Mes
+                                                            </option>
+
+                                                            <option value="1">01</option>
+
+                                                            <option value="2">02</option>
+
+                                                            <option value="3">03</option>
+
+                                                            <option value="4">04</option>
+
+                                                            <option value="5">05</option>
+
+                                                            <option value="6">06</option>
+
+                                                            <option value="7">07</option>
+
+                                                            <option value="8">08</option>
+
+                                                            <option value="9">09</option>
+
+                                                            <option value="10">10</option>
+
+                                                            <option value="11">11</option>
+
+                                                            <option value="12">12</option>
+
+                                                        </select>
+                                                        <label id="mes-error" class="error"
+                                                               style="display: none;"></label>
+                                                    </div>
+
+                                                    <div class="col-xs-6">
+
+                                                        <select id="expiry-year" autocomplete="cc-exp-year"
+                                                                data-encrypted-name="expiryYear" class="form-control"
+                                                                onchange="comprobar_anio()">
+
+                                                            <option id="trans-label_year" value="" default=""
+                                                                    selected="selected">Año
+                                                            </option>
+                                                            <option value="2025">25</option>
+                                                            <option value="2026">26</option>
+                                                            <option value="2027">27</option>
+                                                            <option value="2028">28</option>
+                                                            <option value="2029">29</option>
+                                                            <option value="2030">30</option>
+                                                            <option value="2031">31</option>
+                                                            <option value="2032">32</option>
+                                                            <option value="2033">33</option>
+                                                            <option value="2034">34</option>
+                                                            <option value="2035">35</option>
+                                                            <option value="2036">36</option>
+                                                            <option value="2037">37</option>
+                                                            <option value="2038">38</option>
+                                                            <option value="2039">39</option>
+                                                            <option value="2040">40</option>
+                                                            <option value="2041">41</option>
+                                                            <option value="2042">42</option>
+                                                            <option value="2043">43</option>
+                                                            <option value="2044">44</option>
+                                                            <option value="2045">45</option>
+                                                            <option value="2046">46</option>
+                                                            <option value="2047">47</option>
+
+                                                        </select>
+                                                        <label id="anio-error" class="error"
+                                                               style="display: none;"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-xs-6">
+
+                                            <div class="form-group">
+
+                                                <label id="trans-security_code" for="security-code"
+                                                       class="contain-tooltip" data-tooltip="" data-lang="cvc_info">Código
+                                                    de seguridad</label>
+
+                                                <span class="safe-field">
+ <input id="security-code" placeholder="***" class="form-control" type="text" onchange="comprobar_codigo()">
+ <label id="codigo-error" class="error" style="display: none;"></label>
+</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-xs-6">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="hook">
+
+
+                                        <div class="center-block ajax-spinner ajax-spinner-lg iframe-spinner"
+                                             style="display: none;"></div>
+                                    </div>
+
+                                    <aside class="aside-legal">
+
+                                        <p>
+                                            Das tu consentimiento para obtener acceso a tu suscripción de SpotBook
+                                            inmediatamente y para que, se te cobre automáticamente la tarifa de
+                                            suscripción cada mes hasta que canceles. El cancelar no da derecho a
+                                            reembolso. Tienes las condiciones al completo e instrucciones para cancelar
+                                            <a href="#" target="_blank">aquí</a>.
+                                        </p>
+
+                                    </aside>
+                                    <a href="{% url 'home' %}" id="enviar" class="btn btn-azul">Envia</a>
+                                    </form>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

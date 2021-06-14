@@ -12,6 +12,8 @@
             $('.notificaciones').addClass('active');
         } else if (value == 'revimg') {
             $('.revimg').addClass('active');
+        } else if (value == 'solTrad') {
+            $('.solTrad').addClass('active');
         } else if (value == 'solimg') {
             $('.solimg').addClass('active');
         }
@@ -52,6 +54,9 @@
 
 <li class="revimg" id="submenu-item-family-plan">
     <a href="{% url 'revImg' %}"><i class="fa fa-image" aria-hidden="true"></i> Revisar imágenes Dep. Diseño </a>
+</li>
+<li class="solTrad" id="submenu-item-account-overview">
+    <a href="{% url 'solTraduc' %}"><i class="fa fa-files-o" aria-hidden="true"></i> Solicitud Traducción</a>
 </li>
 <li id="salir">
     <a href="{% url 'login' %}"><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>

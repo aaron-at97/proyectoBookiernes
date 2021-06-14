@@ -1,0 +1,66 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login_libroSinSession.css' %}"/>
+
+<body id="static_context" class="login context_landing">
+<head>
+
+    {% include "home/header.html" %}
+
+</head>
+
+<div class="main-login-class">
+        <h1>Inicia sesión para leer el libro</h1>
+  	<div class="cols-wrap">
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            link = document.getElementById("link").value;
+            $("<style> .context_landing::before {  background: url('"+link+"') no-repeat center center fixed; background-size: cover;} </style>").appendTo("head");
+        });
+
+        </script>
+		<div class='col col-left'>
+          	<img id='cover-img' src='{% static '/img/Libros/' %}{{ libro }}/0.jpg' alt='f'>
+                 <p class='primary-title'>{{ libro }}</p>
+                  <p class='secondary-title'>{{ autor }}</p>
+		</div>
+		  <input type='text' name='link' id='link' value='{% static '/img/Libros/' %}{{ libro }}/0.jpg' style='display: none;'>
+        <div class="col col-right">
+             <div id="login-pane">
+             	<div id="login">
+              		<div id="login-method">
+                       <div class="step show" id="screen-signup-flow">
+                       		<div class="step-outer">
+                       			<div class="step-inner">
+                       				<a href=""> <button id="signup-bookIerner" class="btn-landing btn-azul" data-or="or" data-contextual="true">Registrarte<br>
+									</button> </a>
+                       				<div class="separator-container">
+										<div class="separator-line"></div>
+										<div class="separator-text">¿Ya tienes cuenta?</div>
+										<div class="separator-line"></div>
+                       				</div>
+                       				<a href="{% url 'login' %}"> <button id="has-account" class="btn-landing btn-white" data-or="or">Iniciar sesión
+        							</button> </a>
+                                    <a href="{% url 'verDemo' libro autor %}"> <button id="has-account" class="btn-landing btn-white" data-or="or">Ver demo
+        							</button> </a>
+                                    <div class="separator-container">
+                                        <div class="separator-line"></div>
+                                        <div class="separator-text">¿Quieres volver?</div>
+                                        <div class="separator-line"></div>
+                                    </div>
+                                    <a href="{% url 'home' %}"> <button id="signup-bookIerner" class="btn-landing btn-azul" data-or="or" data-contextual="true">Volver<br>
+                                    </button> </a>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
