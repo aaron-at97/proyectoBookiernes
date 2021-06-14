@@ -82,13 +82,13 @@
     <div class="row">
 
         {% for element in object_list %}
-            {% if element.state > 3 and element.state < 7 %}
+            {% if element.state > 4 and element.state < 8 %}
                 <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
                     <h2> {{ element.title }} </h2>
                     <p> Fecha subida: {{ element.date | date:"d/m/Y" }}</p>
                     <p> Autor: Aitor Corchero</p>
                     <p> Genero: {{ element.genere }}</p>
-                    {% ifnotequal element.state 4 %}
+                    {% ifnotequal element.state 6 %}
                         <div class="imgrec">
                             <h3 style="font-weight: bold;"> Archivos: </h3>
                             <p> img.jpg</p>
@@ -96,13 +96,13 @@
                             <p> img3.jpg</p>
                         </div>
                     {% endifnotequal %}
-                    {% ifequal element.state 6 %}
+                    {% ifequal element.state 7 %}
 
                         <img class="img1" src="../../static/img/Estados/{{ element.state }}.png">
                         <a href="{% url 'motiveReject' %}">Ver motivo</a>
                     {% endifequal %}
 
-                    {% if element.state > 3 and element.state < 6 %}
+                    {% if element.state > 4 and element.state < 8 %}
 
                         <img src="../../static/img/Estados/{{ element.state }}.png">
                     {% endif %}

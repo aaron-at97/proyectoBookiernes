@@ -1,0 +1,119 @@
+{% load static %}
+
+
+<head>
+
+    {% include "home/header.html" %}
+    <!-- cuerpo -->
+    <link rel="stylesheet" href="{% static 'css/css_Login.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/css_Formulario.css' %}"/>
+
+</head>
+<body>
+<style>
+    .head .bookiernes-logo {
+        background-image: url("../../../static/img/logo.png");
+        background-repeat: no-repeat;
+
+        background-size: 100%;
+        display: inline-block;
+        max-width: 100%;
+        width: 250px;
+        height: 75px;
+    }
+</style>
+<div class="header-formulario-registro-logo">
+    <div class="container">
+        <div class="head ">
+            <a class="bookiernes-logo" ng-href="/es-ES" tabindex="-1" title="BookIernes" href="Index.php"
+               value="Nombre de empresa"></a>
+        </div>
+    </div>
+</div>
+
+<div class="formulario-registro">
+    <div class="container">
+        <div class="contenido-formulario">
+            <h2 style="color: white"> Regístrate con tu dirección de correo electrónico </h2>
+            <form>
+                <ul>
+                    <li>
+                        <input type="text" name="register-email" id="register-email" placeholder="Correo electrónico"
+                               onchange="comprobar_correo()" maxlength="80">
+                        <label id="register-email-error" class="error"> </label>
+                    </li>
+                    <li>
+                        <input type="text" name="register-user" id="register-user" placeholder="Usuario"
+                               onchange="comprobar_usuario()" maxlength="20">
+                        <label id="register-user-error" class="error"> </label>
+                    </li>
+                    <li>
+                        <input type="password" name="register-password" id="register-password" placeholder="Contraseña"
+                               maxlength="20">
+                        <label></label>
+                    </li>
+                    <li>
+                        <input type="password" name="register-password-repeat" id="register-password-repeat"
+                               placeholder="Confirmar contraseña" onchange="comprobar_contraseña()" maxlength="20">
+                        <label id="register-password-error" class="error"> </label>
+                    </li>
+                    <li>
+                        <input type="text" name="register-first-name" id="register-first-name" placeholder="Nombre"
+                               onchange="comprobar_nombre()" maxlength="30">
+                        <label id="register-first-name-error" class="error"> </label>
+                    </li>
+                    <li>
+                        <input type="text" name="register-last-name" id="register-last-name" placeholder="Apellido"
+                               onchange="comprobar_apellido()" maxlength="30">
+                        <label id="register-last-name-error" class="error"></label>
+                    </li>
+                    <li>
+                        <input type="number" name="register-tlf" id="register-tlf" placeholder="Teléfono"
+                               onchange="comprobar_telefono()" maxlength="11">
+                        <label id="register-tlf-error" class="error"></label>
+                    </li>
+                    <li>
+                        <input type="text" name="register-dni" id="register-dni" placeholder="DNI/NIE"
+                               onchange="comprobar_dni()" maxlength="10">
+                        <label id="register-dni-error" class="error"></label>
+                    </li>
+                    <li hidden>
+                        <input type="text" name="register-population" id="register-population" placeholder="Población"
+                               hidden>
+                        <label id="register-population-error" class="error"></label>
+                    </li>
+                    <li hidden>
+                        <input type="text" name="register-province" id="register-province" placeholder="Provincia"
+                               hidden>
+                        <label id="register-province-error" class="error"></label>
+                    </li>
+                    <li>
+                        <input type="text" name="register-adress" id="register-adress" placeholder="Dirección"
+                               onchange="comprobar_direccion()" maxlength="50">
+                        <label id="register-adress-error" class="error"></label>
+                    </li>
+                    <li>
+                        <input type="number" name="register-cp" id="register-cp" placeholder="Código postal"
+                               onchange="comprobar_cp()" maxlength="5">
+                        <label id="register-cp-error" class="error"></label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="terminos" id="terminos" required="required">
+                            Acepto todas las condiciones que pueda tener esta pagina web.
+                        </label>
+                    </li>
+                    <li>
+                        <label id="register-error" class="error"></label>
+                    </li>
+                </ul>
+                <a href="{% url 'banco_alta' %}" id="enviar" id="comprobar_todo" class="btn btn-stroked-dark">
+                    Envia </a>
+            </form>
+            <a href="{% url 'home' %}">
+                <button id="volver" class="btn btn-stroked-dark"> Volver</button>
+
+        </div>
+    </div>
+</div>
+</body>
