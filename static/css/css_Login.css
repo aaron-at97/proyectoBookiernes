@@ -1,0 +1,275 @@
+@charset "utf-8";
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.head .bookiernes-logo {
+    background-image: url("../img/logoN.png");
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+    display: inline-block;
+    max-width: 100%;
+	width: 250px;
+	height: 75px;
+}
+
+.checkbox, .checkbox-inline, .form-group label, .radio, .radio-inline {
+    color: #919496;
+    font-weight: 400;
+}
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-stroked-dark {
+    color: #fff;
+    box-shadow: 0 0 0 2px #fff inset;
+    background-color: transparent;
+    margin-bottom: 70px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 18px 48px 16px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: bold;
+}
+
+.btn-stroked-dark:hover, .btn-stroked-dark:focus {
+    color: white;
+    background-color: #337ab7;
+    box-shadow: 0 0 0 2px #fff inset;
+}
+body, .header-formulario-registro-logo {
+	color:white;
+	background-color:#1B273B !important;
+	padding-bottom: 5px;
+	font-weight: 400;
+	font-family: Circular,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222326;
+
+}
+a, a:focus, a:hover {
+    text-decoration: none;
+}
+a {
+    color: #1db954;
+}
+a {
+    background-color: transparent;
+}
+.authorize .disclaimer, .login .disclaimer {
+    font-size: .7em;
+}
+.head {
+    border-bottom: 1px solid #d9dadc;
+    padding: 25px 0 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.row-submit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.head .spotify-logo {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 100%;
+    display: inline-block;
+    max-width: 100%;
+    width: 200px;
+}
+.form-control{
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9dadc;
+    border-radius: 0;
+}
+.content {
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.header-formulario-registro-logo{
+	display: block;
+	border-bottom: 1px solid #dfe0e6;
+}
+
+.header-formulario-registro-logo .container .astec-logo img.logo-registro{
+	width: 30%;
+    height: 30%;
+    margin: 0 auto;
+}
+.header-formulario-registro-logo .container{
+	text-align: center;
+}
+
+/* CSS body*/
+
+.formulario-registro{
+	display: block;
+}
+
+.formulario-registro .container{
+	text-align: center;
+}
+
+.formulario-registro .container .contenido-formulario{
+	margin: 0 auto;
+	max-width: 26.875em;
+}
+
+.formulario-registro .container .contenido-formulario h2{
+	font-size: 17px;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	color: #1c1c1f;
+	font-weight: 900;
+    line-height: 1.2;
+}
+
+.formulario-registro .container .contenido-formulario form ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.formulario-registro .container .contenido-formulario form ul li{
+	text-align: left;
+	margin-bottom: .625em;
+}
+.formulario-registro .container .contenido-formulario form ul li input{
+ 	padding: 1em .75em .6875em;
+    width: 100%;
+    border: 1px solid #dfe0e6;
+    font-size: .9375em;
+}
+.formulario-registro .container .contenido-formulario form ul li label.checkbox{
+	color: #88898c;
+    display: block;
+    font-size: .75em;
+    margin-bottom: 1.5rem;
+}
+
+.formulario-registro .container .contenido-formulario form ul li label input{
+	float: left;
+    margin-top: 3px;
+    background: 0 0;
+    border: none;
+    padding: 0;
+    width: 4%;
+    margin-right: 10px;
+}
+
+.btn-stroked-dark {
+    color: #fff;
+    box-shadow: 0 0 0 2px #fff inset;
+    background-color: transparent;
+    margin-bottom: 70px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 18px 48px 16px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: bold;
+}
+
+.btn-stroked-dark:hover, .btn-stroked-dark:focus{
+color: white;
+background-color: #337ab7;
+box-shadow: 0 0 0 2px #fff inset;
+}
+.checkbox, .checkbox-inline, .form-group label, .radio, .radio-inline {
+    color: #919496;
+    font-weight: 400;
+}
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.col-xs-12 {
+    width: 100%;
+}
+.text-center {
+    text-align: center;
+}
+div {
+    display: block;
+}
+.divider {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+}
+.text-muted {
+    color: #c1c3c6;
+}
+
+.error-login-mensaje{
+    color: red; 
+}
