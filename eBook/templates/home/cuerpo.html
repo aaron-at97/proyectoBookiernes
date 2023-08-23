@@ -1,0 +1,172 @@
+{% load static %}
+
+<!-- cuerpo -->
+<link rel="stylesheet" href="{% static 'css/cuerpo.css' %}"/>
+
+{% block contents %}
+
+    <!-- Libros mas leidos inicio -->
+    <div class="container">
+        <div class="row center">
+            <h2 class="h1">¿En busca de nuevos libros?</h2>
+            <p class="lead">Entra en nuestra biblioteca para descubrir nuevos libros.</p>
+            <a href="bibliotecaSinSesion.php" id="segmented-desktop-launch" class="btn btn-stroked-dark" role="button"
+               href="Categorias.html">Abrir la Biblioteca</a>
+        </div>
+        <div class="row">
+            <div class="album-results container">
+                <ul>
+                    {% for element in object_list %}
+                        {% for element2 in element.books.all %}
+                            <li class='col-xs-12 col-sm-3 js-album-results-1'>
+                                <figure>
+                                    <div class='box'>
+                                        <div class='content'>
+                                            <img class='img-responsive'
+                                                 src='{% static '/img/Libros/' %}{{ element2 }}/0.jpg'>
+                                        </div>
+                                    </div>
+
+                                    <div class='content-overlay'></div>
+                                    <div class='content-details'>
+                                        <form action='#' method='post'>
+                                            <figcaption class='album-play-button'>
+                                                <h2 class='text-white'><input type='hidden' name='libro'
+                                                                              value='{{ element2 }}'>{{ element2 }}
+                                                </h2></input>
+                                                <h4 class='text-white'><input type='hidden' name='autor'
+                                                                              value='{{ element.name }}'>{{ element.name }}
+                                                </h4></input>
+                                                <div id='segmented-play-now' class='btn btn-link'>
+                                                    <a href="{% url 'libroSinSession' element2 element.name  %}" class='azul-claro'
+                                                       value='LEER YA'>
+                                                        LEER YA</a>
+                                                </div>
+                                            </figcaption>
+                                        </form>
+
+                                    </div>
+                                </figure>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- apartado que hay en BookIernes -->
+    <div class="hero hero-whats-on general">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 col-md-5 margen">
+                    <h2>
+                        ¿Qué hay en BookIernes?
+                    </h2>
+                    <div>
+                        <h3>
+                            Libros
+                        </h3>
+                        <p>
+                            En BookIernes tienes millones de Libros. Lee tus favoritos, descubre nuevos
+                            libros y monta
+                            tu
+                            colección perfecta.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Biblioteca
+                        </h3>
+                        <p>
+                            Encontrarás tu biblioteca recopilada con los libros que mas te han gustado.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Nuevos lanzamientos
+                        </h3>
+                        <p>
+                            Lee los últimos libros de esta semana y echa un vistazo a lo que más triunfa
+                            en el Top 50.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1 col-md-6">
+                    <div class="albums clearfix">
+                        {% for element in object_list %}
+                            {% for element2 in element.books.all %}
+                                <div id="album-slot">
+                                    <div class="album-art has-preview album-paused">
+                                        <img src='{% static '/img/Libros/' %}{{ element2 }}/0.jpg'
+                                             class="lazy lazy-no-small"
+                                             style="display: block;">
+                                        <div class="register-state">
+                                            <p>Regístrate para escuchar la canción completa</p>
+                                            <a class="btn btn-link" href="/es/signup/">COMENZAR</a>
+                                        </div>
+                                        <div class="play-state content-overlay">
+                                            <div class="svg-holder">
+                                                <a href='{% url 'libroSinSession' element2 element.name %}'><img src="{% static 'img/LEER MAS.png' %}"
+                                                        class="lazy lazy-no-small" style="display: block;"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Creacion de cuenta -->
+    <section>
+        <div class="hero hero-subscription">
+            <div class="container">
+                <div class="hero-subscription-bg"></div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Hazte con tu cuenta.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        <div class="list">
+                            <div class="list-item animated animatedFadeInUp fadeInUp" style="margin: 0 auto;">
+                                <div class="list-content">
+                                    <h3>BookIernes</h3>
+                                    <span class="pricing" style="height: 79px;">
+                <h4>
+                                    9,00 € <span class="month"> / mes</span>
+                </h4>
+              </span>
+                                    <div class="features">
+                                        <ul class="BookIernes-free-list">
+                                            <li>Crea tu Biblioteca</li>
+                                            <li>Sin anuncios</li>
+                                            <li>Sin interrupciones</li>
+                                            <li>A la carta</li>
+                                            <li>Los mejores libros</li>
+                                            <li>Sin limites</li>
+                                        </ul>
+                                    </div>
+                                    <a href="Registrar_usuario.html"
+                                       class="btn btn-azul js-goto-signup js-button-module-get-free"
+                                       id="plan-get-free-button">
+                                        Regístrate Ahora
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<script>
+    $(document).ready(function () {
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'updateBook') {
+            $('.updateBook').addClass('active');
+        } else if (value == 'myBooks') {
+            $('.myBooks').addClass('active');
+        } else if (value == 'notificaciones') {
+            $('.notificaciones').addClass('active');
+        }
+    });
+</script>
+
+<style>
+    .noti {
+        color: #2f8cf7;
+        box-shadow: 0 0 5px 0 rgb(255 255 255) !important;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #2f8cf7;
+        width: 14px;
+        height: 14px;
+    }
+</style>
+<li id="notificaciones" class="notificaciones">
+    <a href="{% url 'notifyEs' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i>
+        Notificaciones </a>
+</li>
+<li id="myBooks" class="myBooks">
+    <a href="{% url 'list_book' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis Libros
+        Subidos </a>
+</li>
+
+<li id="updateBook" class="updateBook">
+    <a href="{% url 'book_create' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir
+        Libros </a>
+</li>
+
+<li id="salir">
+    <a href="{% url 'login' %}"><i class="fa fa-undo" aria-hidden="true"></i> Salir </a>
+</li>

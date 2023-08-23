@@ -1,0 +1,63 @@
+<script>
+    $(document).ready(function () {
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'bookacept') {
+            $('.bookacept').addClass('active');
+        } else if (value == 'bookreject') {
+            $('.bookreject').addClass('active');
+        } else if (value == 'bookpublish') {
+            $('.bookpublish').addClass('active');
+        } else if (value == 'notificaciones') {
+            $('.notificaciones').addClass('active');
+        } else if (value == 'revimg') {
+            $('.revimg').addClass('active');
+        } else if (value == 'solTrad') {
+            $('.solTrad').addClass('active');
+        } else if (value == 'solimg') {
+            $('.solimg').addClass('active');
+        }
+    });
+</script>
+<style>
+    .noti {
+        color: #2f8cf7;
+        box-shadow: 0 0 5px 0 rgb(255 255 255) !important;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #2f8cf7;
+        width: 14px;
+        height: 14px;
+    }
+</style>
+<li id="notificaciones" class="notificaciones">
+    <a href="{% url 'notifyEd' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
+</li>
+<li class="bookpublish" id="submenu-item-account-overview">
+    <a href="{% url 'book_publish' %}"><i class="fa fa-book" aria-hidden="true"></i> Asignar
+        libros</a>
+</li>
+
+<li class="bookreject" id="submenu-item-account-overview">
+    <a href="{% url 'book_rejected' %}"><i class="fa fa-remove" aria-hidden="true"></i> Libros
+        Rechazados </a>
+</li>
+
+<li class="bookacept" id="submenu-item-family-plan">
+    <a href="{% url 'book_acept' %}"><i class="fa fa-check" aria-hidden="true"></i> Libros
+        aceptados </a>
+</li>
+<li class="solimg" id="submenu-item-account-overview">
+    <a href="{% url 'solImg' %}"><i class="fa fa-image" aria-hidden="true"></i> Solicitud de imágenes </a>
+</li>
+
+<li class="revimg" id="submenu-item-family-plan">
+    <a href="{% url 'revImg' %}"><i class="fa fa-image" aria-hidden="true"></i> Revisar imágenes Dep. Diseño </a>
+</li>
+<li class="solTrad" id="submenu-item-account-overview">
+    <a href="{% url 'solTraduc' %}"><i class="fa fa-files-o" aria-hidden="true"></i> Solicitud Traducción</a>
+</li>
+<li id="salir">
+    <a href="{% url 'login' %}"><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
+</li>

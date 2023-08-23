@@ -1,0 +1,78 @@
+{% extends 'navbars/navbar_base.html' %}
+
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block content %}
+    <h1> Estado solicitudes imágenes </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Asignar</td>
+        </tr>
+        <tr>
+
+            <td>Cañas y barro</td>
+            <td>
+                Aitor Corchero
+            </td>
+            <td> Novela</td>
+            <td> 05/02/2021</td>
+            <td> Por solicitar</td>
+            <td>
+                Jordi Virgili
+            </td>
+        </tr>
+        <tr>
+
+            <td> El futuro de nuestra mente</td>
+            <td>Aitor Corchero</td>
+            <td>Investigación científica</td>
+            <td> 10/03/2021</td>
+            <td> Por solicitar</td>
+            <td>
+                Jordi Virgili
+            </td>
+        </tr>
+        <tr>
+
+            <td> La celestina</td>
+            <td> Aitor Corchero</td>
+            <td> Teatro y Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: yellow">Solicitado</p></td>
+            <td>
+                Jordi Virgili
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <div class="page-header"><h1>Solicitar imágenes</h1></div>
+
+    <label style="float: left;"> Seleccione el nombre del libro: </label>
+    <select class="selectPop" style="clear: both; float: left;">
+        <option value="El futuro de nuestra mente"> El futuro de nuestra mente</option>
+        <option value="La celestina"> La celestina</option>
+    </select>
+    <label style="float: left;  margin: 1% 0; clear: both;">Descripción solicitud:</label>
+    <textarea style="width: 80%; height: 300px; clear: both; float: left; margin-bottom: 50px;"></textarea>
+
+    <div style="clear: both;" class="center">
+        <a href="{% url 'solImg' %}" class=" btn btn-stroked-dark">Solicitar</a>
+    </div>
+
+    <input style="display: none" type="submit" id="valmenu" value="solimg"/>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'books/diseñador/disenyo_asig.html' %}
+
+{% block popUp %}
+
+    <div class="ventana">
+        <div class="contenido-ventana">
+            <span class="boton-cerrar"></span>
+            <h1>Seleccione el editor al que desea asignar el siguiente libro para su revisión:</h1>
+            <label>Editores: </label>
+            <select class="selectPop">
+                <option value="Jordi Virgili">Jordi Virgili</option>
+                <option value="Marta Oliva">Marta Oliva</option>
+                <option value="Diseñador1">Diseñador1</option>
+                <option value="Diseñador2">Diseñador2</option>
+            </select>
+              <div class="center">
+                <a href="{% url 'asign_diseny' %}" class="btn-default-bookiernes">Aceptar</a>
+              </div>
+
+        </div>
+    </div>
+
+{% endblock %}

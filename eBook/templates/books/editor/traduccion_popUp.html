@@ -1,0 +1,33 @@
+{% extends 'books/editor/solicitud_traduccion.html' %}
+
+{% block popUp %}
+    <script type="text/javascript">
+        function ShowSelected() {
+            var cod = document.getElementById("selectPop").value;
+            alert(cod)
+            var trad = $("#traducir").attr("href", cod);
+            alert(trad)
+        }
+
+    </script>
+    <div class="ventana">
+        <div class="contenido-ventana">
+            <span class="boton-cerrar"></span>
+            <h1>Seleccione el editor al que desea asignar el siguiente libro para su revisión:</h1>
+                <label>Idiomas: </label>
+                <select class="selectPop" id="selectPop" name="idioma" onchange="ShowSelected();">
+                    <option value="">Seleccionar idioma:</option>
+                    <option value="{% url 'solTraduc2' 'Cañas y barro' 'en' %}">Inglés</option>
+                    <option value="{% url 'solTraduc2' 'Cañas y barro' 'de' %}">Alemán</option>
+                    <option value="{% url 'solTraduc2' 'Cañas y barro' 'pt' %}">Portuges</option>
+                    <option value="{% url 'solTraduc2' 'Cañas y barro' 'fr' %}fr">Francés</option>
+                </select>
+                <div class="center">
+                    <a href="" id="traducir" class="btn-default-bookiernes">Aceptar</a>
+                </div>
+
+                <input value="{{ data }}"/>
+        </div>
+    </div>
+
+{% endblock %}

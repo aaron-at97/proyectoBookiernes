@@ -1,0 +1,43 @@
+<script>
+    $(document).ready(function () {
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'book1') {
+            $('.book1').addClass('active');
+        } else if (value == 'book2') {
+            $('.book2').addClass('active');
+        } else if (value == 'book3') {
+            $('.book3').addClass('active');
+        } else if (value == 'notificaciones') {
+            $('.notificaciones').addClass('active');
+        }
+    });
+</script>
+<style>
+    .noti {
+        color: #2f8cf7;
+        box-shadow: 0 0 5px 0 rgb(255 255 255) !important;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #2f8cf7;
+        width: 14px;
+        height: 14px;
+    }
+</style>
+<li id="notificaciones" class="notificaciones">
+    <a href="{% url 'notifyEd' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
+</li>
+<li class="book1" id="submenu-item-account-overview">
+    <a href="{% url 'list_book_image' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis libros diseñados </a>
+</li>
+<li class="book2" id="submenu-item-account-overview">
+    <a href="{% url 'asign_diseny' %}"><i class="fa fa-image" aria-hidden="true"></i> Solicitudes de imagenes</a>
+</li>
+
+<li class="book3" id="submenu-item-family-plan">
+    <a href="{% url 'push_diseny' %}"><i class="fa fa-upload" aria-hidden="true"></i> Subir bateria de imagenes </a>
+</li>
+<li id="salir">
+    <a href="{% url 'login' %}"><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
+</li>

@@ -1,0 +1,31 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Escritor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Escritor.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="formulario-registro">
+        <div class="container">
+            <div class="contenido-formulario">
+                <h2 style="color: white"> Regístrar Libro </h2>
+                <form id="formulari" action="{% url 'book_createSave' %}" method="post">
+                    {% csrf_token %}
+                    {% if mensaje %}
+                        <div class="alert alert-success" role="alert">
+                            Review Registrada correctamente
+                        </div>
+                    {% endif %}
+                    {{ form.as_ul }}
+                    <input class="btn btn-stroked-dark" type="submit" value="Enviar"/>
+                    <input style="display: none" type="submit" id="valmenu" value="updateBook"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

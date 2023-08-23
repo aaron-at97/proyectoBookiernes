@@ -1,0 +1,83 @@
+{% extends 'navbars/navbar_base.html' %}
+
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block content %}
+    <h1> Libros por asignar </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold">Descargar libro</td>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Asignar</td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar"> Descargar</button>
+            </td>
+            <td>Cañas y barro</td>
+            <td>
+                Aitor Corchero
+            </td>
+            <td>Novela</td>
+            <td>05/02/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+                <a href="{% url 'rejectBook' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> El futuro de nuestra mente</td>
+            <td>Aitor Corchero</td>
+            <td>Investigación científica</td>
+            <td> 10/03/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td> La celestina</td>
+            <td>Aitor Corchero</td>
+            <td>Teatro y Novela</td>
+            <td> 10/03/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+                <button class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></button>
+                {% if role == 'Editor in chief' %}
+                    <a href="{% url 'asignedEd' %}" class="btn btn-primary fa fa-pencil"></a>
+                {% endif %}
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="bookpublish"/>
+{% endblock %}
+{% block popUp %}
+{% endblock %}

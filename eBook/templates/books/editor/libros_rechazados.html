@@ -1,0 +1,57 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+{% block content %}
+    <h1> Libros rechazados </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold">Descargar libro</td>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Asignar</td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>Sueños de papel</td>
+            <td>Aitor Corchero</td>
+            <td>Drama</td>
+            <td>05/02/2021</td>
+            <td><p style="color: red">Rechazado</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-download" name="aceptar" onclick=""> Descargar</button>
+            </td>
+            <td>Sueños de papel</td>
+            <td>Aitor Corchero</td>
+            <td>Drama</td>
+            <td>05/02/2021</td>
+            <td><p style="color: red">Rechazado</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+
+
+            </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="bookreject"/>
+{% endblock %}

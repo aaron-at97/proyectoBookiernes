@@ -1,0 +1,93 @@
+{% extends 'navbars/navbar_base.html' %}
+{% load static %}
+{% block navbar %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Maquetador.html" %}
+{% endblock %}
+
+{% block content %}
+    <h1>Estado de mis libros</h1>
+
+    <style>
+        .listBook {
+            position: relative;
+            font-family: Aro;
+            box-shadow: 0 0 4px 1px rgb(24 23 23) !important;
+            background-color: white;
+            margin: 4% 4%;
+            color: #1B273B;
+            padding: 0 2%;
+            height: 310px;
+        }
+
+        .listBook p {
+            font-size: 18px;
+            margin-bottom: 3%;
+        }
+
+        .listBook h2 {
+            margin-bottom: 5%;
+        }
+
+        .listBook img {
+            color: white;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .listBook .img1 {
+            color: white;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            right: 0px;
+            bottom: 28px;
+        }
+
+        .listBook .imgrec {
+            color: #1B273B;
+            float: right;
+            margin-right: 0%;
+            position: absolute;
+            right: 15%;
+            bottom: 28%;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+    <div class="row">
+
+        {% for element in object_list %}
+            {% if element.state == 8 or element.state == 10 %}
+                <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
+                    <h2> {{ element.title }} </h2>
+                    <p> Fecha subida: {{ element.date | date:"d/m/Y" }}</p>
+                    <p> Autor: Aitor Corchero</p>
+                    <p> Genero: {{ element.genere }}</p>
+                    <div class="imgrec">
+                        <h3 style="font-weight: bold;"> Archivos: </h3>
+                        <a> libro.zip </a> </br>
+                        <a> img.jpg</a> </br>
+                        <a> img2.jpg</a> </br>
+                        <a> img3.jpg</a> </br>
+                    </div>
+                    <img src="../../../../static/img/Estados/7.png">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <input style="display: none" type="submit" id="valmenu" value="listbookpublish"/>
+
+{% endblock %}
+
+{% block popUp %}
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block content %}
+<script>
+    function myFunction() {
+      $('#contenerdor').addClass('ocult');
+    }
+</script>
+    <style>
+
+        .Box {
+            background-color: #0d1117;
+            width: 100%;
+            max-width: 100%;
+            border: 0 solid #30363d;
+            border-radius: 11px;
+            margin-bottom: 20px;
+        }
+
+        .Box-header {
+            padding: 16px;
+            background-color: #0d1117;
+            border: 1px solid #0d1117;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        tr {
+            border-bottom: 1px solid #30363d !important;
+        }
+
+        td {
+            color: white;
+            border: 0 solid;
+            padding: 16px 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-radius: 1em;
+            overflow: hidden;
+        }
+
+        #boton {
+            visibility: hidden;
+        }
+
+        #contenerdor:hover #boton {
+            visibility: visible;
+        }
+        #contenerdor:hover {
+            background-color: #1B273B;
+        }
+        .ocult {
+            display: none;
+        }
+    </style>
+    <table class="Box">
+        <tbody>
+        <tr class="Box-header">
+            <td style="font-weight: bold; font-size: 25px;">Notificaciones {{ role }}</td>
+            <td style="font-weight: bold"></td>
+        </tr>
+        {% for element in notify %}
+            <tr id="contenerdor">
+                <p>
+                    <td>
+                <p>{{ element.concept }}</p>
+                <p>{{ element.book_key.title }} - Aitor Corchero</p>
+                </td>
+                <td>
+                {% if role == 'Editor in chief' %}
+                     <a href="{% url 'book_publish' %}" id="boton" style="margin-right: 15px; float: right;" class="btn btn-primary fa fa-check"></a>
+                {% elif role == 'Editor' %}
+                      <a href="{% url 'book_publish' %}" id="boton" style="margin-right: 15px; float: right;" class="btn btn-primary fa fa-check"></a>
+                {% endif %}
+
+                    <button id="boton" style="margin-right: 15px; float: right;" class="btn btn-primary fa fa-bell-slash-o" onclick="myFunction()"></button>
+                    <p id="boton2" style="margin-top: 7px; margin-right: 15px; float: right;">  {{ element.date | date:"d/m/Y" }}</p>
+                </td>
+            </tr>
+
+        {% endfor %}
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="notificaciones"/>
+{% endblock %}
+

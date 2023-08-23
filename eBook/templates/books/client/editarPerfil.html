@@ -1,0 +1,80 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Client.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Client.html" %}
+{% endblock %}
+
+{% block content %}
+    <!--<div class="page-header">
+        <h1>Editar perfil</h1>
+    </div>-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="perfil">
+                <form role="form">
+                {% for element in object_list %}
+                    <div class='form-group' id="input-modificar">
+                        <label class='control-label'> Nombre: </label>
+                        <input type='text' class='form-control md-usuario' id='nombre' name='nombre'
+                                value="{{ element.nombre }}" maxlength="30">
+                    </div>
+
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Apellido</label>
+                        <input type='text' class='form-control md-usuario' id='apellido' name='apellido'
+                               value="{{ element.apellido }}" maxlength="30">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Télefono</label>
+                        <input type='number' class='form-control md-usuario' id='telefono' name='telefono'
+                                value="{{ element.telefon }}" maxlength="11">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Correo electrónico</label>
+                        <input type='text' class='form-control md-usuario' id='correo' name='correo'
+                               value="{{ element.correo }}" maxlength="80">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Dirección</label>
+                        <input type='text' class='form-control md-usuario' id='direccion' name='direccion'
+                               value="{{ element.direccion }}" maxlength="50">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Código postal</label>
+                        <input type='number' class='form-control md-usuario' id='cp' name='cp' value="{{ element.codi_postal }}"
+                               maxlength="5">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Contraseña Nueva</label>
+                        <input type='password' class='form-control md-usuario' id='passwd' name='passwd'
+                               placeholder="*********" maxlength="20">
+                    </div>
+                    <div class="form-group" id="input-modificar">
+                        <label class="control-label">Repetir Contraseña</label>
+                        <input type='password' class='form-control md-usuario' id='passwd2' name='passwd2'
+                               placeholder="*********" maxlength="20">
+                    </div>
+                </form>
+                {% endfor %}
+                <div>
+                    <h3 class="margen" id="margen">Editar tu perfil</h3>
+                    <div class="row margen">
+                        <div class="col-md-6">
+                            <p>Modifica tu perfil cuando desees si observas algun dato incorrecto en tu perfil
+                                personal de BookIernes</p>
+                        </div>
+                        <div class="col-md-6">
+                            <button id="Modificar" class="btn btn-azul">Modificar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <input style="display: none" type="submit" id="valmenu" value="book4"/>
+{% endblock %}

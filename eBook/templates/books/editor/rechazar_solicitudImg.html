@@ -1,0 +1,16 @@
+{% extends 'books/editor/rev_img.html' %}
+
+{% block popUp %}
+
+    <div class="ventana">
+        <div class="contenido-ventana">
+            <span class="boton-cerrar"></span>
+            <h1>Motivos del rechazo de la solicitud bateria imágenes del libro "Cañas y Barro":</h1>
+            <textarea style="width: 100%; height: 422px;"></textarea>
+            <div class="center">
+                <a href="{% url 'revImg' %}" class="btn-default-bookiernes">Aceptar</a>
+              </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<script>
+    $(document).ready(function () {
+        var value = $("#valmenu").val();
+        // Checking for blank fields.
+        if (value == 'listbookpublish') {
+            $('.listbookpublish').addClass('active');
+        } else if (value == 'bookpublish') {
+            $('.bookpublish').addClass('active');
+        } else if (value == 'bookpublicate') {
+            $('.bookpublicate').addClass('active');
+        } else if (value == 'notificaciones') {
+            $('.notificaciones').addClass('active');
+        }
+    });
+</script>
+<style>
+    .noti {
+        color: #2f8cf7;
+        box-shadow: 0 0 5px 0 rgb(255 255 255) !important;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #2f8cf7;
+        width: 14px;
+        height: 14px;
+    }
+</style>
+<li id="notificaciones" class="notificaciones">
+    <a href="{% url 'notifyMaq' %}"><i class="fa fa-circle noti" aria-hidden="true"></i><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones </a>
+</li>
+<li class="listbookpublish" id="submenu-item-account-overview">
+    <a href="{% url 'list_book_publish' %}"><i class="fa fa-bookmark" aria-hidden="true"></i> Mis libros por publicar</a>
+</li>
+<li class="bookpublicate" id="submenu-item-account-overview">
+    <a href="{% url 'book_publicate' %}"><i class="fa fa-book" aria-hidden="true"></i> Mis libros publicados</a>
+</li>
+<li class="bookpublish" id="submenu-item-account-overview">
+    <a href="{% url 'subir_libro' %}"><i class="fa fa-check" aria-hidden="true"></i> Publicar libros </a>
+</li>
+
+
+<li id="salir">
+    <a href="{% url 'login' %}"><i class="fa fa fa-undo" aria-hidden="true"></i> Salir </a>
+</li>

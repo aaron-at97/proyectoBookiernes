@@ -1,0 +1,116 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block content %}
+    <h1> Libros por traducir </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Traducir</td>
+        </tr>
+        <tr>
+
+            <td>Cañas y barro</td>
+            <td>
+                Aitor Corchero
+            </td>
+            <td>Novela</td>
+            <td>05/02/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <a href="{% url 'traduccionPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
+            </td>
+        </tr>
+        <tr>
+
+            <td> El futuro de nuestra mente</td>
+            <td>Aitor Corchero</td>
+            <td>Investigación científica</td>
+            <td> 10/03/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <a href="{% url 'traduccionPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
+            </td>
+        </tr>
+        <tr>
+
+            <td> La celestina</td>
+            <td>Aitor Corchero</td>
+            <td>Teatro y Novela</td>
+            <td> 10/03/2021</td>
+            <td> Por asignar</td>
+            <td>
+                <a href="{% url 'traduccionPopUp' %}" class="btn btn-primary fa fa-pencil"></a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <h1> Estado libros por traducir</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Idioma</td>
+            <td style="font-weight: bold"> Estado</td>
+            <td style="font-weight: bold">Ver</td>
+        </tr>
+
+        <tr>
+
+            <td> El principe del mal</td>
+            <td> Mark Lawrence</td>
+            <td> Novela</td>
+            <td> 10/03/2021</td>
+            <td> Inglés</td>
+            <td><p style="color: green">Finalizado</p></td>
+            <td>
+                <a href="{% url 'descargarPopUp' %}" class="btn btn-primary fa fa-search"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> La columna de fuego</td>
+            <td> KEN FOLLET</td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td> Inglés</td>
+            <td><p style="color: green">Finalizado</p></td>
+            <td>
+                <a href="{% url 'descargarPopUp' %}" class="btn btn-primary fa fa-search"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> Juego de tronos</td>
+            <td>Aitor Corchero</td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td> Inglés</td>
+            <td><p style="color: green">Finalizado</p></td>
+            <td>
+                <a href="{% url 'descargarPopUp' %}" class="btn btn-primary fa fa-search"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="solTrad"/>
+
+
+{% endblock %}
+{% block popUp %}
+{% endblock %}

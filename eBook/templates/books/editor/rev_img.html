@@ -1,0 +1,93 @@
+{% extends 'navbars/navbar_base.html' %}
+{% block navbar %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Editor.html" %}
+{% endblock %}
+{% block content %}
+
+    <h1> Aceptar imágenes proporcionadas </h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="font-weight: bold">Ver bateria imágenes</td>
+            <td style="font-weight: bold"> Titulo libro</td>
+            <td style="font-weight: bold"> Nombre autor</td>
+            <td style="font-weight: bold">Genero</td>
+            <td style="font-weight: bold"> Fecha subida</td>
+            <td style="font-weight: bold"> Estado solicitud</td>
+            <td style="font-weight: bold">Asignar</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'ver_img' %}" class="btn btn-primary fa fa-search" name="Ver imágenes">Ver imágenes</a>
+            </td>
+            <td> Cañas y barro </td>
+            <td> Aitor Corchero </td>
+            <td> Novela </td>
+            <td> 10/03/2021</td>
+            <td><p style="color: yellow">Recibida</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+                <a href="{% url 'rejectBookBatery' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'ver_img' %}" class="btn btn-primary fa fa-search" name="Ver imágenes">Ver imágenes</a>
+            </td>
+            <td> El futuro de nuestra mente</td>
+            <td>Aitor Corchero</td>
+            <td>Investigación científica</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: red">Rechazado</p></td>
+            <td>
+                <button class="btn btn-primary btn-success fa fa-check" name="aceptar"></button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-search" name="aceptar" onclick=""> Ver imágenes </button>
+            </td>
+            <td> El principe del mal </td>
+            <td> Mark Lawrence </td>
+            <td> Novela </td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Aceptado</p></td>
+            <td>
+                <a href="{% url 'rejectBookBatery' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-search" name="aceptar" onclick=""> Ver imágenes </button>
+            </td>
+            <td> La columna de fuego</td>
+            <td> KEN FOLLET </td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Aceptado</p></td>
+            <td>
+                <a href="{% url 'rejectBookBatery' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary fa fa-search" name="aceptar" onclick=""> Ver imágenes </button>
+            </td>
+            <td> Juego de tronos</td>
+            <td>Aitor Corchero</td>
+            <td>Novela</td>
+            <td> 10/03/2021</td>
+            <td><p style="color: green">Aceptado</p></td>
+            <td>
+                <a href="{% url 'rejectBookBatery' %}" class="btn btn-primary btn-danger fa fa-remove" name="aceptar"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <input style="display: none" type="submit" id="valmenu" value="revimg"/>
+{% endblock %}

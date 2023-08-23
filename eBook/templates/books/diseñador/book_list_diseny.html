@@ -1,0 +1,119 @@
+{% extends 'navbars/navbar_base.html' %}
+{% load static %}
+
+{% block navbar %}
+    {% include "navbars/navbar_Diseñador.html" %}
+{% endblock %}
+
+{% block navbarXS %}
+    {% include "navbars/navbar_Diseñador.html" %}
+{% endblock %}
+
+{% block content %}
+    <h1>Mis diseños de imagenes</h1>
+
+    <style>
+        .listBook {
+            position: relative;
+            font-family: Aro;
+            box-shadow: 0 0 4px 1px rgb(24 23 23) !important;
+            background-color: white;
+            margin: 4% 4%;
+            color: #1B273B;
+            padding: 0 2%;
+            height: 310px;
+        }
+
+        .listBook p {
+            font-size: 18px;
+            margin-bottom: 3%;
+        }
+
+        .listBook h2 {
+            margin-bottom: 5%;
+        }
+
+        .listBook img {
+            color: white;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .listBook .img1 {
+            color: white;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            right: 0px;
+            bottom: 28px;
+        }
+
+        .listBook a {
+            color: #1B273B;
+            float: right;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            position: absolute;
+            margin-top: 2%;
+            right: 18px;
+            bottom: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .listBook .imgrec {
+            color: #1B273B;
+            float: right;
+            margin-right: 7%;
+            margin-bottom: 17%;
+            position: absolute;
+            right: 18px;
+            bottom: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+
+    <div class="row">
+
+        {% for element in object_list %}
+            {% if element.state > 4 and element.state < 8 %}
+                <div style="" class="col-lg-5 col-md-5 col-sm-5 listBook">
+                    <h2> {{ element.title }} </h2>
+                    <p> Fecha subida: {{ element.date | date:"d/m/Y" }}</p>
+                    <p> Autor: Aitor Corchero</p>
+                    <p> Genero: {{ element.genere }}</p>
+                    {% ifnotequal element.state 6 %}
+                        <div class="imgrec">
+                            <h3 style="font-weight: bold;"> Archivos: </h3>
+                            <p> img.jpg</p>
+                            <p> img2.jpg</p>
+                            <p> img3.jpg</p>
+                        </div>
+                    {% endifnotequal %}
+                    {% ifequal element.state 7 %}
+
+                        <img class="img1" src="../../static/img/Estados/{{ element.state }}.png">
+                        <a href="{% url 'motiveReject' %}">Ver motivo</a>
+                    {% endifequal %}
+
+                    {% if element.state > 4 and element.state < 8 %}
+
+                        <img src="../../static/img/Estados/{{ element.state }}.png">
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <input style="display: none" type="submit" id="valmenu" value="book1"/>
+
+{% endblock %}
+
+{% block popUp %}
+{% endblock %}
